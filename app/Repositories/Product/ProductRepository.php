@@ -94,6 +94,20 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
         ? $products->whereBetween('price',[$priceMin,$priceMax]) 
         : $products;
 
+        //Color
+        $color = $request->color;
+        $products = $color != null 
+        ? $products->whereHas('productDetails', function ($query) use ($color) {
+            return $query->where('color', $color)->where('qty','>',0);
+        }) : $products;
+
+        //RAM
+        $ram = $request->RAM;
+        $products = $ram != null 
+        ? $products->whereHas('productDetails', function ($query) use ($ram) {
+            return $query->where('RAM', $ram)->where('qty','>',0);
+        }) : $products;
+
         return $products;
     }
 }

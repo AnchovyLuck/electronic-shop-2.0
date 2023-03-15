@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="front/img/laptop.png" heihgt="25" alt="logo">
                             </a>
                         </div>

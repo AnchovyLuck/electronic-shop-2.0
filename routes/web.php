@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ShopController;
+use App\Http\Controllers\Front\CartController;
 use App\Repositories\Product\ProductRepository;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,10 @@ Route::prefix('shop')->group(function () {
     Route::post('product/{id}', [ShopController::class, 'postComment']);
     Route::get('/', [ShopController::class, 'index']);
     Route::get('category/{categoryName}', [ShopController::class, 'category']);
+});
+
+Route::prefix('cart')->group(function () {
+    Route::get('add/{id}', [CartController::class, 'add']);
+    
 });
 

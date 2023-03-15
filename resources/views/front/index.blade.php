@@ -72,36 +72,8 @@
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel staff">
-                        @foreach ($featuredProducts['staff'] as $staffProduct)
-                            <div class="product-item item {{$staffProduct->tag}}">
-                                <div class="pi-pic">
-                                    <img src="{{URL('front/img/products/').'/'.$staffProduct->productImages[0]->path}}" alt="">
-                                    @if ($staffProduct->discount != null)
-                                        <div class="sale">Sale</div>
-                                    @endif
-                                    <div class="icon">
-                                        <i class="icon_heart_alt"></i>
-                                    </div>
-                                    <ul>
-                                        <li><a class="w-icon active" href=""><i class="icon_bag_alt"></i></a></li>
-                                        <li><a class="quick-view" href="shop/product/{{$staffProduct->id}}" >+ Quick View</a></li>
-                                        <li><a class="w-icon" href=""><i class="fa fa-random"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="pi-text">
-                                    <div class="catagory-name">{{$staffProduct->tag}}</div>
-                                    <a href="shop/product/{{$staffProduct->id}}">
-                                        <h5>{{$staffProduct->name}}</h5>
-                                    </a>
-                                    <div class="product-price">
-                                        @if ($staffProduct->discount != null)
-                                            {{$staffProduct->discount}} đ <span>{{$staffProduct->price}} đ</span>
-                                        @else
-                                            {{$staffProduct->price}} đ
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
+                        @foreach ($featuredProducts['staff'] as $product)
+                            @include('front.components.product-item')
                         @endforeach
                     </div>
                 </div>
@@ -125,37 +97,9 @@
                         </ul>
                     </div>
                     <div class="product-slider owl-carousel dev">
-                        @foreach ($featuredProducts['dev'] as $devProduct)
-                        <div class="product-item item {{$devProduct->tag}}">
-                            <div class="pi-pic">
-                                <img src="{{URL('front/img/products/').'/'.$devProduct->productImages[0]->path}}" alt="">
-                                @if ($devProduct->discount != null)
-                                    <div class="sale">Sale</div>
-                                @endif
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li><a class="w-icon active" href=""><i class="icon_bag_alt"></i></a></li>
-                                    <li><a class="quick-view" href="shop/product/{{$devProduct->id}}" >+ Quick View</a></li>
-                                    <li><a class="w-icon" href=""><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">{{$devProduct->tag}}</div>
-                                <a href="shop/product/{{$devProduct->id}}">
-                                    <h5>{{$devProduct->name}}</h5>
-                                </a>
-                                <div class="product-price">
-                                    @if ($devProduct->discount != null)
-                                        {{$devProduct->discount}} đ <span>{{$devProduct->price}} đ</span>
-                                    @else
-                                        {{$devProduct->price}} đ
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+                        @foreach ($featuredProducts['dev'] as $product)
+                            @include('front.components.product-item') 
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-3">
