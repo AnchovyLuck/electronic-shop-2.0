@@ -8,9 +8,9 @@
             <i class="icon_heart_alt"></i>
         </div>
         <ul>
-            <li><a class="w-icon active" href="cart/add/{{$product->id}}"><i class="icon_bag_alt"></i></a></li>
-            <li><a class="quick-view" href="shop/product/{{$product->id}}" >+ Quick View</a></li>
-            <li><a class="w-icon" href=""><i class="fa fa-random"></i></a></li>
+            <li class="w-icon active"><a href="javascript:addCart({{$product->id}})"><i class="icon_bag_alt"></i></a></li>
+            <li class="quick-view"><a href="shop/product/{{$product->id}}" >+ Quick View</a></li>
+            <li class="w-icon"><a href=""><i class="fa fa-random"></i></a></li>
         </ul>
     </div>
     <div class="pi-text">

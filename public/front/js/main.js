@@ -279,3 +279,47 @@
     })
 
 })(jQuery);
+
+function addCart(productId) {
+    $.ajax({
+        type: "GET",
+        url: "cart/add",
+        data: { productId: productId },
+        success: function(response) {
+            $('.cart-count').text(response['count']);
+            $('.cart-price').text(response['total'] + 'đ');
+            $('.select-total h5').text(response['total'] + 'đ');
+
+            let cartHover_tbody = $('.select-items tbody');
+            let carHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + response['cart'].rowId + "']");
+
+            if (carHover_existItem.length) {
+                carHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(3) + 'x' + response['cart'].qty);
+            } else {
+                let newItem =
+                    '<tr data-rowId="' + response['cart'].rowId + '">\n' +
+                    '<td class = "si-pic">\n' +
+                    '<img style = "margin: auto; width: 8vw; height: 15vh;"\n' +
+                    'src = "{{URL(\'front/img/products/' + response['cart'].options.images[0].path + ')}}" alt = "" >\n' +
+                    '</td>\n' +
+                    '<td class = "si-text">\n' +
+                    '<div class = "product-selected">\n' +
+                    '<p>' + response['cart'].price.toFixed(3) + ' đ x ' + response['cart'].qty + '</p>\n' +
+                    '<h6>' + response['cart'].name + '</h6>\n' +
+                    '</div>\n' +
+                    '</td>\n' +
+                    '<td class = "si-close" >\n' +
+                    '<i class = "ti-close" > </i>\n' +
+                    '</td>\n' +
+                    '</tr>';
+                cartHover_tbody.append(newItem);
+            }
+            alert('Đã thêm vào giỏ hàng sản phẩm ' + response['cart'].name + '!');
+            console.log(response);
+        },
+        error: function(response) {
+            alert('Thêm sản phẩm thất bại!');
+            console.log(response);
+        },
+    });
+}
