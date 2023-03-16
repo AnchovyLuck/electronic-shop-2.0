@@ -2976,7 +2976,7 @@ ol {
     height: 13px;
     width: 13px;
     border: 2px solid #B2B2B2;
-    border-radius: 2px;
+    border-radius: 50%;
 }
 
 .checkout-form .create-item label .checkmark:after {
@@ -3067,7 +3067,7 @@ ol {
     height: 13px;
     width: 13px;
     border: 2px solid #B2B2B2;
-    border-radius: 2px;
+    border-radius: 50%;
 }
 
 .checkout-form .place-order .order-total .payment-check .pc-item label .checkmark:after {

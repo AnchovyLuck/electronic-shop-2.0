@@ -3,6 +3,7 @@
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\CartController;
+use App\Http\Controllers\Front\CheckOutController;
 use App\Repositories\Product\ProductRepository;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,8 @@ Route::prefix('cart')->group(function () {
 });
 
 Route::get('about',[HomeController::class, 'about']);
+
+Route::prefix('checkout')->group(function () {
+    Route::get('', [CheckOutController::class, 'index']);
+});
+Route::post('checkout', [CheckOutController::class, 'addOrder']);

@@ -42,12 +42,10 @@
             <div class="container">
                 <div class="ht-left">
                     <div class="mail-service">
-                        <i class="fa fa-envelope">nightlongbytom@gmail.com</i>
+                        <i class="fa fa-envelope"></i><span>nightlongbytom@gmail.com</span>
                     </div>
                     <div class="phone-service">
-                        <i class="fa fa-phone">
-                            +84 36.758.7383
-                        </i>
+                        <i class="fa fa-phone"></i><span> +84 36.758.7383</span>
                     </div>
                 </div>
                 <div class="ht-right">
@@ -128,7 +126,7 @@
                                     </div>
                                     <div class="select-button">
                                         <a href="./cart" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="check-out.html" class="primary-btn checkout-btn">CHECK OUT</a>
+                                        <a href="checkout" class="primary-btn checkout-btn">CHECK OUT</a>
                                     </div>
                                 </div>
                             </li>
@@ -170,7 +168,7 @@
                             <ul class="dropdown">
                                 <li><a href="blog-details.html">Blog Details</a></li>
                                 <li><a href="./cart">Shopping Cart</a></li>
-                                <li><a href="check-out.html">Checkout</a></li>
+                                <li><a href="checkout">Checkout</a></li>
                                 <li><a href="faq.html">Faq</a></li>
                                 <li class="{{(request()->segment(1) == 'about') ? 'active' : ''}}"><a href="about">About</a></li>
                                 <li><a href="register.html">Register</a></li>
@@ -254,8 +252,8 @@
                     <div class="footer-widget">
                         <h5>Information</h5>
                         <ul>
-                            <li><a href="">About Us</a></li>
-                            <li><a href="">Check out</a></li>
+                            <li><a href="about">About Us</a></li>
+                            <li><a href="checkout">Check out</a></li>
                             <li><a href="">Contact</a></li>
                             <li><a href="">Service</a></li>
                         </ul>

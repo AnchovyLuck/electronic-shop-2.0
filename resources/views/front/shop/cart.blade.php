@@ -82,7 +82,7 @@
                                         <li class="subtotal">Subtotal <span>{{$subtotal}} đ</span></li>
                                         <li class="cart-total">Total <span>{{$total}} đ</span></li>
                                     </ul>
-                                    <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                                    <a href="checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>
                                 </div>
                             </div>
                         </div>
