@@ -39,11 +39,38 @@ class CartController extends Controller
             ]);
 
             $response['count'] = Cart::count();
+            $response['subtotal'] = Cart::subtotal();
             $response['total'] = Cart::total();
 
             return $response;
         }
         
         return back();
+    }
+    public function delete(Request $request) {
+        if ($request->ajax()) {
+            $response['cart'] = Cart::remove($request->rowId);
+
+            $response['count'] = Cart::count();
+            $response['subtotal'] = Cart::subtotal();
+            $response['total'] = Cart::total();
+
+            return $response;
+        }
+        return back();
+    }
+    public function destroy() {
+        Cart::destroy();
+    }
+    public function update(Request $request) {
+        if ($request->ajax()) {
+            $response['cart'] = Cart::update($request->rowId, $request->qty);
+
+            $response['count'] = Cart::count();
+            $response['subtotal'] = Cart::subtotal();
+            $response['total'] = Cart::total();
+
+            return $response;
+        }
     }
 }

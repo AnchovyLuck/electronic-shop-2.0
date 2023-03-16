@@ -71,7 +71,7 @@
 
                 <div class="function" style="width: 80%; margin-left: auto; margin-right: auto;">
                     <p>
-                        Trang web trong đề tài của chúng em có những chức năng chính như sau:
+                        Trang web trong đề tài của chúng em dự kiến có những chức năng chính như sau:
                     </p>
                     <ul>
                         <li><h5>Đối với khách hàng:</h5></li>

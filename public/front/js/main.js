@@ -252,6 +252,9 @@
             }
         }
         $button.parent().find('input').val(newVal);
+        //Update cart
+        let rowId = $button.parent().find('input').data('rowid');
+        updateCart(rowId, newVal);
     });
 
     /*-------------------
@@ -291,16 +294,16 @@ function addCart(productId) {
             $('.select-total h5').text(response['total'] + 'đ');
 
             let cartHover_tbody = $('.select-items tbody');
-            let carHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + response['cart'].rowId + "']");
+            let cartHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + response['cart'].rowId + "']");
 
-            if (carHover_existItem.length) {
-                carHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(3) + 'x' + response['cart'].qty);
+            if (cartHover_existItem.length) {
+                cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(3) + 'x' + response['cart'].qty);
             } else {
                 let newItem =
                     '<tr data-rowId="' + response['cart'].rowId + '">\n' +
                     '<td class = "si-pic">\n' +
                     '<img style = "margin: auto; width: 8vw; height: 15vh;"\n' +
-                    'src = "{{URL(\'front/img/products/' + response['cart'].options.images[0].path + ')}}" alt = "" >\n' +
+                    'src = "front/img/products/' + response['cart'].options.images[0].path + '" alt = "" >\n' +
                     '</td>\n' +
                     '<td class = "si-text">\n' +
                     '<div class = "product-selected">\n' +
@@ -308,17 +311,125 @@ function addCart(productId) {
                     '<h6>' + response['cart'].name + '</h6>\n' +
                     '</div>\n' +
                     '</td>\n' +
-                    '<td class = "si-close" >\n' +
-                    '<i class = "ti-close" > </i>\n' +
+                    '<td class="si-close" >\n' +
+                    '<i onclick="removeCart(\'' + response['cart'].rowId + '\')" class="ti-close" > </i>\n' +
                     '</td>\n' +
                     '</tr>';
                 cartHover_tbody.append(newItem);
             }
-            alert('Đã thêm vào giỏ hàng sản phẩm ' + response['cart'].name + '!');
+            alert('Đã thêm vào giỏ hàng sản phẩm:\n + ' + response['cart'].name + '!');
             console.log(response);
         },
         error: function(response) {
             alert('Thêm sản phẩm thất bại!');
+            console.log(response);
+        },
+    });
+}
+
+function removeCart(rowId) {
+    $.ajax({
+        type: "GET",
+        url: "cart/delete",
+        data: { rowId: rowId },
+        success: function(response) {
+            $('.cart-count').text(response['count']);
+            $('.cart-price').text(response['total'] + 'đ');
+            $('.select-total h5').text(response['total'] + 'đ');
+            $('.subtotal span').text(response['subtotal'] + 'đ');
+            $('.cart-total span').text(response['total'] + 'đ');
+
+            //Delete hover cart item 
+            let cartHover_tbody = $('.select-items tbody');
+            let cartHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + rowId + "']");
+
+            cartHover_existItem.remove();
+
+            //Delete index cart item
+            let cart_tbody = $('.cart-table tbody');
+            let cart_existItem = cart_tbody.find("tr" + "[data-rowId='" + rowId + "']");
+
+            cart_existItem.remove();
+
+            alert('Đã xóa khỏi giỏ hàng sản phẩm:\n + ' + response['cart'].name + '!');
+            console.log(response);
+        },
+        error: function(response) {
+            alert('Xóa sản phẩm thất bại!');
+            console.log(response);
+        },
+    });
+}
+
+function destroyCart() {
+    $.ajax({
+        type: "GET",
+        url: "cart/destroy",
+        data: {},
+        success: function(response) {
+            $('.cart-count').text('0');
+            $('.cart-price').text('0.000 đ');
+            $('.select-total h5').text('0.000 đ');
+            $('.subtotal span').text('0.000 đ');
+            $('.cart-total span').text('0.000 đ');
+
+            //Delete hover cart items
+            let cartHover_tbody = $('.select-items tbody');
+            cartHover_tbody.children().remove();
+
+            //Delete index cart items
+            let cart_tbody = $('.cart-table tbody');
+            cart_tbody.children().remove();
+
+
+
+            alert('Đã xoá tất cả sản phẩm khỏi giỏ hàng!');
+            console.log(response);
+        },
+        error: function(response) {
+            alert('Xóa sản phẩm thất bại!');
+            console.log(response);
+        },
+    });
+}
+
+function updateCart(rowId, qty) {
+    $.ajax({
+        type: "GET",
+        url: "cart/update",
+        data: { rowId: rowId, qty: qty },
+        success: function(response) {
+            $('.cart-count').text(response['count']);
+            $('.cart-price').text(response['total'] + 'đ');
+            $('.select-total h5').text(response['total'] + 'đ');
+            $('.subtotal span').text(response['subtotal'] + 'đ');
+            $('.cart-total span').text(response['total'] + 'đ');
+
+            //Delete hover cart item 
+            let cartHover_tbody = $('.select-items tbody');
+            let cartHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + rowId + "']");
+            if (qty === 0) {
+                cartHover_existItem.remove();
+            } else {
+                cartHover_existItem.find('.product-seleted p').text(response['cart'].price.toFixed(3) + ' đ' + ' x ' + response['cart'].qty);
+            }
+
+
+            //Delete index cart item
+            let cart_tbody = $('.cart-table tbody');
+            let cart_existItem = cart_tbody.find("tr" + "[data-rowId='" + rowId + "']");
+            if (qty === 0) {
+                cart_existItem.remove();
+            } else {
+                cart_existItem.find('.total-price').text((response['cart'].price * response['cart'].qty).toFixed(3) + ' đ');
+            }
+
+
+            // alert('Bạn đã thay đổi số lượng của sản phẩm: ' + response['cart'].name);
+            console.log(response);
+        },
+        error: function(response) {
+            alert('Cập nhật giỏ hàng thất bại!');
             console.log(response);
         },
     });
