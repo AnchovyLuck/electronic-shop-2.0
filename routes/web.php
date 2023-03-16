@@ -31,3 +31,4 @@ Route::prefix('cart')->group(function () {
     Route::get('/', [CartController::class, 'index']);
 });
 
+Route::get('about',[HomeController::class, 'about']);

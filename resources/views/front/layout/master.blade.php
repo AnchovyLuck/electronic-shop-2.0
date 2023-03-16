@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="front/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="front/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="front/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/02c0e39c7a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -105,7 +107,7 @@
                                             <tbody>
                                                 @foreach (Cart::content() as $cart)
                                                     <tr data-rowId="{{$cart->rowId}}">
-                                                        <td class="si-pic"><img style="margin: auto; width: 8vw; height: 15vh;" src="{{URL('front/img/products'.'/'.$cart->options->images[0]->path)}}" alt=""></td>
+                                                        <td class="si-pic"><img style="margin: auto; width: 8vw; height: 15vh;" src="front/img/products/{{$cart->options->images[0]->path}}" alt=""></td>
                                                         <td class="si-text">
                                                             <div class="product-selected">
                                                                 <p>{{number_format(($cart->discount ?? $cart->price), 3)}} đ x {{$cart->qty}}</p>
@@ -170,6 +172,7 @@
                                 <li><a href="./cart">Shopping Cart</a></li>
                                 <li><a href="check-out.html">Checkout</a></li>
                                 <li><a href="faq.html">Faq</a></li>
+                                <li class="{{(request()->segment(1) == 'about') ? 'active' : ''}}"><a href="about">About</a></li>
                                 <li><a href="register.html">Register</a></li>
                                 <li><a href="login.html">Login</a></li>
                             </ul>

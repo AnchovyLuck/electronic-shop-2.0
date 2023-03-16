@@ -24,4 +24,8 @@ class HomeController extends Controller
 
         return view('front/index', compact('featuredProducts', 'blogs'));
     }
+
+    public function about() {
+        return view('front/about');
+    }
 }
