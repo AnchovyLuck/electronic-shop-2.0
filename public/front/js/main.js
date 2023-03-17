@@ -297,7 +297,7 @@ function addCart(productId) {
             let cartHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + response['cart'].rowId + "']");
 
             if (cartHover_existItem.length) {
-                cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(3) + 'x' + response['cart'].qty);
+                cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(0) + ' x ' + response['cart'].qty);
             } else {
                 let newItem =
                     '<tr data-rowId="' + response['cart'].rowId + '">\n' +
@@ -307,7 +307,7 @@ function addCart(productId) {
                     '</td>\n' +
                     '<td class = "si-text">\n' +
                     '<div class = "product-selected">\n' +
-                    '<p>' + response['cart'].price.toFixed(3) + ' đ x ' + response['cart'].qty + '</p>\n' +
+                    '<p>' + response['cart'].price.toFixed(0) + ' đ x ' + response['cart'].qty + '</p>\n' +
                     '<h6>' + response['cart'].name + '</h6>\n' +
                     '</div>\n' +
                     '</td>\n' +
@@ -368,10 +368,10 @@ function destroyCart() {
         data: {},
         success: function(response) {
             $('.cart-count').text('0');
-            $('.cart-price').text('0.000 đ');
-            $('.select-total h5').text('0.000 đ');
-            $('.subtotal span').text('0.000 đ');
-            $('.cart-total span').text('0.000 đ');
+            $('.cart-price').text('0 đ');
+            $('.select-total h5').text('0 đ');
+            $('.subtotal span').text('0 đ');
+            $('.cart-total span').text('0 đ');
 
             //Delete hover cart items
             let cartHover_tbody = $('.select-items tbody');
@@ -411,7 +411,7 @@ function updateCart(rowId, qty) {
             if (qty === 0) {
                 cartHover_existItem.remove();
             } else {
-                cartHover_existItem.find('.product-seleted p').text(response['cart'].price.toFixed(3) + ' đ' + ' x ' + response['cart'].qty);
+                cartHover_existItem.find('.product-seleted p').text(response['cart'].price.toFixed(0) + ' đ' + ' x ' + response['cart'].qty);
             }
 
 
@@ -421,7 +421,7 @@ function updateCart(rowId, qty) {
             if (qty === 0) {
                 cart_existItem.remove();
             } else {
-                cart_existItem.find('.total-price').text((response['cart'].price * response['cart'].qty).toFixed(3) + ' đ');
+                cart_existItem.find('.total-price').text((response['cart'].price * response['cart'].qty).toFixed(0) + ' đ');
             }
 
 

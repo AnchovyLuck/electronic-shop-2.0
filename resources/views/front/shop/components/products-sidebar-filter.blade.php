@@ -81,22 +81,22 @@
         <h4 class="fw-title">RAM</h4>
         <div class="fw-size-choose">
             <div class="sc-item"> 
-                <input type="radio" id="s-size" name="RAM" value="4" onchange="this.form.submit();"
+                <input type="checkbox" id="s-size" name="RAM" value="4" onchange="this.form.submit();"
                 {{request('RAM') == '4' ? 'checked' : ''}}>
                 <label for="s-size" class="{{request('RAM') == '4' ? 'active' : ''}}">4</label>
             </div>
             <div class="sc-item">
-                <input type="radio" id="m-size" name="RAM" value="8" onchange="this.form.submit();"
+                <input type="checkbox" id="m-size" name="RAM" value="8" onchange="this.form.submit();"
                 {{request('RAM') == '8' ? 'checked' : ''}}>
                 <label for="m-size" class="{{request('RAM') == '8' ? 'active' : ''}}">8</label>
             </div>
             <div class="sc-item">
-                <input type="radio" id="l-size" name="RAM" value="16" onchange="this.form.submit();"
+                <input type="checkbox" id="l-size" name="RAM" value="16" onchange="this.form.submit();"
                 {{request('RAM') == '16' ? 'checked' : ''}}>
                 <label for="l-size" class="{{request('RAM') == '16' ? 'active' : ''}}">16</label>
             </div>
             <div class="sc-item">
-                <input type="radio" id="xs-size" name="RAM" value="32" onchange="this.form.submit();"
+                <input type="checkbox" id="xs-size" name="RAM" value="32" onchange="this.form.submit();"
                 {{request('RAM') == '32' ? 'checked' : ''}}>
                 <label for="xs-size" class="{{request('RAM') == '32' ? 'active' : ''}}">32</label>
             </div>

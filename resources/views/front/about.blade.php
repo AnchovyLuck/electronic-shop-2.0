@@ -54,7 +54,7 @@
                     </p>
 
                     <p>
-                        Đây là một dự án nhóm do chúng em thực hiện với mục đích tạo ra một trang web đơn giản có đầy đủ
+                        Đồ án này được thực hiện với mục đích tạo ra một trang web đơn giản có đầy đủ
                         tính năng cơ bản cho khách hàng và admin.
                     </p>
 

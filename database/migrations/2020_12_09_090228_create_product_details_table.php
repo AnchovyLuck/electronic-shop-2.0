@@ -18,7 +18,7 @@ class CreateProductDetailsTable extends Migration
 
             $table->integer('product_id')->unsigned();
             $table->string('color');
-            $table->string('size');
+            $table->string('RAM');
             $table->integer('qty');
 
             $table->timestamps();

@@ -326,37 +326,37 @@ class DatabaseSeeder extends Seeder
             [
                 'product_id' => 1,
                 'color' => 'blue',
-                'size' => 'S',
+                'RAM' => '4',
                 'qty' => 5,
             ],
             [
                 'product_id' => 1,
                 'color' => 'blue',
-                'size' => 'M',
+                'RAM' => '8',
                 'qty' => 5,
             ],
             [
                 'product_id' => 1,
                 'color' => 'blue',
-                'size' => 'L',
+                'RAM' => '8',
                 'qty' => 5,
             ],
             [
                 'product_id' => 1,
                 'color' => 'blue',
-                'size' => 'XS',
+                'RAM' => '32',
                 'qty' => 5,
             ],
             [
                 'product_id' => 1,
                 'color' => 'yellow',
-                'size' => 'S',
+                'RAM' => '8',
                 'qty' => 0,
             ],
             [
                 'product_id' => 1,
                 'color' => 'violet',
-                'size' => 'S',
+                'RAM' => '4',
                 'qty' => 0,
             ],
         ]);

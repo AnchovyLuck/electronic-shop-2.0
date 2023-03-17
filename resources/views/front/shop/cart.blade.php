@@ -79,8 +79,8 @@
                             <div class="col-lg-4 offset-lg-4">
                                 <div class="proceed-checkout">
                                     <ul>
-                                        <li class="subtotal">Subtotal <span>{{$subtotal}} đ</span></li>
-                                        <li class="cart-total">Total <span>{{$total}} đ</span></li>
+                                        <li class="subtotal">Subtotal <span>{{$subtotal}} &nbsp<span style="text-transform: lowercase;"> đ</span></span></li>
+                                        <li class="cart-total">Total <span>{{$total}} &nbsp<span style="text-transform: lowercase;"> đ</span></span></li>
                                     </ul>
                                     <a href="checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>
                                 </div>

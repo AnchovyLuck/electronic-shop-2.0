@@ -20,9 +20,9 @@
         </a>
         <div class="product-price">
             @if ($product->discount != null)
-            {{number_format($product->discount, 3)}} đ <span>{{number_format($product->price, 3)}} đ</span>
+            {{number_format($product->discount, 0)}} đ <span>{{number_format($product->price, 0)}} đ</span>
             @else
-            {{number_format($product->price, 3)}} đ
+            {{number_format($product->price, 0)}} đ
             @endif
         </div>
     </div>

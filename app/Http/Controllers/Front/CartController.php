@@ -65,7 +65,6 @@ class CartController extends Controller
     public function update(Request $request) {
         if ($request->ajax()) {
             $response['cart'] = Cart::update($request->rowId, $request->qty);
-
             $response['count'] = Cart::count();
             $response['subtotal'] = Cart::subtotal();
             $response['total'] = Cart::total();

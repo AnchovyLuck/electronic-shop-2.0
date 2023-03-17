@@ -10,7 +10,6 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="/"><i class="fa fa-home"></i> Home</a>
-                        <a href="shop">Shop</a>
                         <span>Check out</span>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
                                     <ul class="order-table">
                                         <li>Product <span>Total</span></li>
                                         @foreach ($carts as $cart)
-                                            <li class="fw-normal">{{$cart->name}} x {{$cart->qty}} <span>{{number_format(($cart->price * $cart->qty), 3)}} đ</span></li>
+                                            <li class="fw-normal">{{$cart->name}} x {{$cart->qty}} <span>{{number_format(($cart->price * $cart->qty), 0)}} đ</span></li>
                                         @endforeach
                                         <li class="fw-normal">Subtotal <span>{{$subtotal}} đ</span></li>
                                         <li class="total-price">Total <span>{{$total}} đ</span></li>
