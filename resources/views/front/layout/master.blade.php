@@ -49,7 +49,13 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="login.html" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    
+                    @if (Auth::check())
+                        <a href="account/logout" class="login-panel"><i class="fa fa-user"></i>{{Auth::user()->name}} - Đăng xuất</a>
+                    @else
+                        <a href="account/login" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
+                    @endif
+
                     <div class="lan-selector">
                         <select name="countries" id="coutries" class="language_drop" style="width:300px;">
                             <option value="yt" data-image="front/img/flag-1.jpg" data-imagecss="flag yt" data-title="English">English</option>
@@ -80,7 +86,7 @@
                             <div class="advanced-search">
                                 <button type="button" class="category-btn">All Categories</button>
                                 <div class="input-group">
-                                    <input name="search" value="{{request('search')}}" type="text" placeholder="What do you need?">
+                                    <input class="text-dark font-weight-bold" name="search" value="{{request('search')}}" type="text" placeholder="What do you need?">
                                     <button type="submit"><i class="ti-search"></i></button>
                                 </div>
                             </div>
@@ -166,13 +172,14 @@
                         <li class="{{(request()->segment(1) == 'contact') ? 'active' : ''}}"><a href="contact.html">Contact</a></li>
                         <li><a href="">Pages</a>
                             <ul class="dropdown">
+                                <li class="{{(request()->segment(1) == 'account/my-order') ? 'active' : ''}}"><a href="account/my-order">Xem đơn hàng</a></li>
                                 <li><a href="blog-details.html">Blog Details</a></li>
                                 <li><a href="./cart">Shopping Cart</a></li>
                                 <li><a href="checkout">Checkout</a></li>
                                 <li><a href="faq.html">Faq</a></li>
                                 <li class="{{(request()->segment(1) == 'about') ? 'active' : ''}}"><a href="about">About</a></li>
-                                <li><a href="register.html">Register</a></li>
-                                <li><a href="login.html">Login</a></li>
+                                <li><a href="account/register">Register</a></li>
+                                <li><a href="account/login">Login</a></li>
                             </ul>
                         </li>
                     </ul>

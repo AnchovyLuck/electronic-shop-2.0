@@ -4,7 +4,7 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckOutController;
-use App\Repositories\Product\ProductRepository;
+use App\Http\Controllers\Front\AccountController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,4 +43,18 @@ Route::prefix('checkout')->group(function () {
     Route::post('/', [CheckOutController::class, 'addOrder']);
     Route::get('vnPayCheck', [CheckOutController::class, 'vnPayCheck']);
 });
+
+Route::prefix('account')->group(function () {
+    Route::get('login', [AccountController::class, 'login']);
+    Route::post('login', [AccountController::class, 'checkLogin']);
+    Route::get('logout', [AccountController::class, 'logout']);
+    Route::get('register', [AccountController::class, 'register']);
+    Route::post('register', [AccountController::class, 'postRegister']);
+    Route::prefix('my-order')->group(function () {
+        Route::get('/', [AccountController::class, 'myOrderIndex']);
+        Route::get('{id}', [AccountController::class, 'myOrderShow']);
+    });
+});
+
+
 

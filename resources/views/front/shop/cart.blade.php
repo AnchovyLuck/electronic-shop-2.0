@@ -45,7 +45,7 @@
                                             <td class="cart-title first-row">
                                                 <h5>{{$cart->name}}</h5>
                                             </td>
-                                            <td class="p-price first-row">{{number_format($cart->discount ?? $cart->price, 3)}} đ</td>
+                                            <td class="p-price first-row">{{number_format($cart->discount ?? $cart->price, 0)}} đ</td>
                                             <td class="qua-col first-row">
                                                 <div class="quantity">
                                                     <div class="pro-qty">
@@ -53,7 +53,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="total-price first-row">{{number_format($cart->price * $cart->qty, 3)}} đ</td>
+                                            <td class="total-price first-row">{{number_format($cart->price * $cart->qty, 0)}} đ</td>
                                             <td class="close-td first-row">
                                                 <i onclick="removeCart('{{$cart->rowId}}')" class="ti-close"></i>
                                             </td>

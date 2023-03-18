@@ -297,7 +297,7 @@ function addCart(productId) {
             let cartHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + response['cart'].rowId + "']");
 
             if (cartHover_existItem.length) {
-                cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(0) + ' x ' + response['cart'].qty);
+                cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(0) + ' đ x ' + response['cart'].qty);
             } else {
                 let newItem =
                     '<tr data-rowId="' + response['cart'].rowId + '">\n' +

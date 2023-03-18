@@ -39,7 +39,7 @@
             <div class="row" style="background-color: #070a0c; height: 200px; padding: 35px; color: white;">
                 <div class="container-fluid">
                     <h3 class="m-0 p-0 mt-4" style="margin-top: 0; font-size: 28px; font-weight: 500;">
-                        <strong style="font-size: 32px;">Order Notification</strong>
+                        <strong style="font-size: 32px;">Thông báo đơn hàng</strong>
                         <br>
                         Cảm ơn bạn vì đã đặt hàng!
                     </h3>
@@ -76,7 +76,7 @@
                             <td class="pl-3" style=" padding-left:15px;">
                                 <span class="d-inline"
                                       style="color:#424853; font-family:trebuchet,sans-serif; font-size:16px; font-weight:normal; line-height:22px;">
-                                    Bạn đã chọn phương thức thanh toán khi nhận hàng. Chúng tôi sẽ chuyển đơn hàng của bạn sang đối tác giao hàng.
+                                    Bạn đã chọn <span style="font-weight: bold;">phương thức thanh toán khi nhận hàng</span>. Chúng tôi sẽ chuyển đơn hàng của bạn sang đối tác giao hàng.
                                 </span>
                             </td>
                         @endif
@@ -85,7 +85,7 @@
                             <td class="pl-3" style=" padding-left:15px;">
                                 <span class="d-inline"
                                       style="color:#424853; font-family:trebuchet,sans-serif; font-size:16px; font-weight:normal; line-height:22px;">
-                                      Bạn đã chọn phương thức thanh toán online. Chúng tôi sẽ chuyển đơn hàng của bạn sang đối tác giao hàng.
+                                      Bạn đã chọn <span style="font-weight: bold;">phương thức thanh toán online</span>. Chúng tôi sẽ chuyển đơn hàng của bạn sang đối tác giao hàng.
                                 </span>
                             </td>
                             <td class="pl-3" style=" padding-left:10px;">
