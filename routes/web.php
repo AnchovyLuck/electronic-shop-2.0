@@ -5,6 +5,7 @@ use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckOutController;
 use App\Http\Controllers\Front\AccountController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Front (Client)
 Route::get('/', [HomeController::class, 'index']);
 
 Route::prefix('shop')->group(function () {
@@ -37,7 +39,7 @@ Route::prefix('cart')->group(function () {
 
 Route::get('about',[HomeController::class, 'about']);
 
-Route::prefix('checkout')->group(function () {
+Route::prefix('checkout')->middleware('CheckMemberLogin')->group(function () {
     Route::get('', [CheckOutController::class, 'index']);
     Route::get('result', [CheckOutController::class, 'result']);
     Route::post('/', [CheckOutController::class, 'addOrder']);
@@ -50,11 +52,15 @@ Route::prefix('account')->group(function () {
     Route::get('logout', [AccountController::class, 'logout']);
     Route::get('register', [AccountController::class, 'register']);
     Route::post('register', [AccountController::class, 'postRegister']);
-    Route::prefix('my-order')->group(function () {
+    Route::prefix('my-order')->middleware('CheckMemberLogin')->group(function () {
         Route::get('/', [AccountController::class, 'myOrderIndex']);
         Route::get('{id}', [AccountController::class, 'myOrderShow']);
     });
 });
 
+//Dashboard Admin
+Route::prefix('admin')->group(function () {
+    Route::resource('user', UserController::class);
+});
 
 

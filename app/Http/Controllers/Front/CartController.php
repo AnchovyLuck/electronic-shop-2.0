@@ -47,6 +47,7 @@ class CartController extends Controller
         
         return back();
     }
+
     public function delete(Request $request) {
         if ($request->ajax()) {
             $response['cart'] = Cart::remove($request->rowId);
@@ -59,9 +60,11 @@ class CartController extends Controller
         }
         return back();
     }
+
     public function destroy() {
         Cart::destroy();
     }
+    
     public function update(Request $request) {
         if ($request->ajax()) {
             $response['cart'] = Cart::update($request->rowId, $request->qty);
