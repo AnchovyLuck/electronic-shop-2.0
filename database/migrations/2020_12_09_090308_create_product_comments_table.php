@@ -16,11 +16,11 @@ class CreateProductCommentsTable extends Migration
         Schema::create('product_comments', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('product_id')->unsigned();
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->bigInteger('product_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->string('email');
             $table->string('name');
-            $table->string('messages');
+            $table->text('messages');
             $table->integer('rating')->unsigned();
 
             $table->timestamps();

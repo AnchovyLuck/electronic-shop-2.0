@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-1">
-                    <div class="filter-control">
+                    {{-- <div class="filter-control">
                         <ul>
                             <li class="active item" data-tag="*" data-category="staff">All</li>
                             <li class="item" data-tag=".Asus" data-category="staff">ASUS</li>
@@ -70,7 +70,7 @@
                             <li class="item" data-tag=".Acer" data-category="staff">ACER</li>
                             <li class="item" data-tag=".Dell" data-category="staff">DELL</li>
                         </ul>
-                    </div>
+                    </div> --}}
                     <div class="product-slider owl-carousel staff">
                         @foreach ($featuredProducts['staff'] as $product)
                             @include('front.components.product-item')
@@ -87,7 +87,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-8 offset-lg-1">
-                    <div class="filter-control">
+                    {{-- <div class="filter-control">
                         <ul>
                             <li class="active item" data-tag="*" data-category="dev">All</li>
                             <li class="item" data-tag=".Asus" data-category="dev">ASUS</li>
@@ -95,7 +95,7 @@
                             <li class="item" data-tag=".Acer" data-category="dev">ACER</li>
                             <li class="item" data-tag=".Dell" data-category="dev">DELL</li>
                         </ul>
-                    </div>
+                    </div> --}}
                     <div class="product-slider owl-carousel dev">
                         @foreach ($featuredProducts['dev'] as $product)
                             @include('front.components.product-item') 

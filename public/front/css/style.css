@@ -1900,27 +1900,11 @@ ol {
     color: #636363;
 }
 
-.filter-widget .fw-color-choose .cs-item label.cs-violet:before {
-    background: #8230E3;
+.filter-widget .fw-color-choose .cs-item label.cs-gray:before {
+    background: #80877b;
 }
 
-.filter-widget .fw-color-choose .cs-item label.cs-blue:before {
-    background: #2773BE;
-}
-
-.filter-widget .fw-color-choose .cs-item label.cs-yellow:before {
-    background: #EEEE21;
-}
-
-.filter-widget .fw-color-choose .cs-item label.cs-red:before {
-    background: #DC3232;
-}
-
-.filter-widget .fw-color-choose .cs-item label.cs-green:before {
-    background: #81D742;
-}
-
-.filter-widget .fw-color-choose .cs-item label:before {
+.filter-widget .fw-color-choose .cs-item label::before {
     position: absolute;
     left: 0;
     top: 4px;

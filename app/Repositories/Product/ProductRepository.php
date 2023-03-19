@@ -39,13 +39,18 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
         $products = $this->filter($products, $request);
         $products = $this->sortAndPagination($products, $request);
         
-
+        
         return $products;
     }
 
     private function sortAndPagination($products, $request) {
-        $perPage = $request->show ?? '3';
+        $perPage = $request->show ?? '9';
         $sortBy = $request->sort_by ?? 'latest';
+        $lastPrice = 'discount';
+        foreach ($products as $product) {
+            if ($product->discount === null)
+                $lastPrice = 'price';
+        }
 
         switch($sortBy) {
             case 'latest':
