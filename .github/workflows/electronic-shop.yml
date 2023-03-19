@@ -1,13 +1,18 @@
 name: electronic-shop
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  check-bats-version:
+  create-deployment-artifacts:
+    name: Create deployment artifacts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+
+      - name: Compile CSS and Javascript
+        run:
+          npm install
+          npm run production
