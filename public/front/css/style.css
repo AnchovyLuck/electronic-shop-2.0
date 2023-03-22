@@ -40,7 +40,7 @@ body {
     height: 100%;
     font-family: "Muli", sans-serif;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+    -font-smoothing: antialiased;
 }
 
 h1,
@@ -3009,8 +3009,11 @@ ol {
     text-transform: capitalize;
 }
 
-.checkout-form .place-order .order-total .order-table li.fw-normal span {
+.checkout-form .place-order .order-total .order-table li.fw-normal div {
     font-weight: 700;
+    width: 30%;
+    margin-left: 70%;
+    text-align: right;
 }
 
 .checkout-form .place-order .order-total .order-table li.total-price span {

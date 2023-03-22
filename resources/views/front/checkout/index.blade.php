@@ -91,9 +91,12 @@
                                     <ul class="order-table">
                                         <li>Product <span>Total</span></li>
                                         @foreach ($carts as $cart)
-                                            <li class="fw-normal">{{$cart->name}} x {{$cart->qty}} <span>{{number_format(($cart->price * $cart->qty), 0)}} đ</span></li>
+                                            <li class="fw-normal text-justify">
+                                                <span class="font-weight-bold text-left margin:right:auto; margin-left:auto;" style="width: 10%;"> x {{$cart->qty}}</span><span style="width: 70%; margin-right:20%;">{{$cart->name}}</span>
+                                                <div>{{number_format(($cart->price * $cart->qty), 0)}} đ</div>
+                                            </li>
                                         @endforeach
-                                        <li class="fw-normal">Subtotal <span>{{$subtotal}} đ</span></li>
+                                        <li class="fw-normal">Subtotal <div style="display:inline-block;">{{$subtotal}} đ</div></li>
                                         <li class="total-price">Total <span>{{$total}} đ</span></li>
                                     </ul>
                                     <div class="payment-check">

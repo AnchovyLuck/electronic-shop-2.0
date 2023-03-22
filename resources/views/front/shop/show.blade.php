@@ -62,9 +62,9 @@
                                 <div class="pd-desc">
                                     <p>{{$product->content}}</p>
                                     @if ($product->discount != null)
-                                        <h4>{{number_format($product->discount, 3)}} đ<span>{{number_format($product->price, 3)}} đ</span></h4>
+                                        <h4>{{number_format($product->discount, 0)}} đ<span>{{number_format($product->price, 0)}} đ</span></h4>
                                     @else
-                                        <h4>{{number_format($product->price,3)}} đ</h4>
+                                        <h4>{{number_format($product->price, 0)}} đ</h4>
                                     @endif
                                 </div>
                                 <div class="pd-color">
