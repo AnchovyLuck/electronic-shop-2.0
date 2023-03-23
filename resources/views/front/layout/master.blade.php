@@ -111,7 +111,7 @@
                                             <tbody>
                                                 @foreach (Cart::content() as $cart)
                                                     <tr data-rowId="{{$cart->rowId}}">
-                                                        <td class="si-pic"><img style="margin: auto; width: 30vw; height: 15vh;" src="front/img/products/{{$cart->options->images[0]->path}}" alt=""></td>
+                                                        <td class="si-pic"><img style="margin: auto; width: 50rem; height: 8rem;" src="front/img/products/{{$cart->options->images[0]->path}}" alt=""></td>
                                                         <td class="si-text">
                                                             <div class="product-selected">
                                                                 <p>{{number_format(($cart->discount ?? $cart->price))}} đ x {{$cart->qty}}</p>

@@ -35,7 +35,7 @@
                             <div class="product-thumbs">
                                 <div class="product-thumbs-track ps-slider owl-carousel">
                                     @foreach ($product->productImages as $productImage)
-                                        <div class="pt active" data-imgbigurl="{{URL('front/img/products/'.'/'.$productImage->path)}}">
+                                        <div class="pt active" data-imgbigurl="{{URL('front/img/products/'.'/'.($productImage->path ?? ''))}}">
                                             <img src="{{URL('front/img/products/'.'/'.$productImage->path)}}" alt="">
                                         </div>
                                     @endforeach

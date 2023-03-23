@@ -61,8 +61,9 @@ class CheckOutController extends Controller
             $data_url = $this->create([
                     'vnp_TxnRef' => $order->id,
                     'vnp_OrderInfo' => 'Thanh toán đơn hàng',
-                    'vnp_Amount' => str_replace('.','',Cart::total()),
+                    'vnp_Amount' => str_replace(',','',Cart::total()),
             ]);
+            
             return redirect()->to($data_url);
         }
        

@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'tiencacom20@gmail.com',
             'password' => Hash::make('123456'),
             'avatar' => null,
-            'level' => 2,
+            'level' => 1,
             'description' => null,
 
             'company_name' => 'LapTop',

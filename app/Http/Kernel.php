@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\CheckMemberLogin;
+use App\Http\Middleware\CheckAdminLogin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -66,5 +67,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
         'CheckMemberLogin' => CheckMemberLogin::class,
+        'CheckAdminLogin' => CheckAdminLogin::class,
     ];
 }

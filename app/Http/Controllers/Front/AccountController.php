@@ -28,7 +28,7 @@ class AccountController extends Controller
         $credentials = [
             'email' => $request->email,
             'password' => $request->password,
-            'level' => Constant::user_level_client,
+            'level' => [Constant::user_level_client, Constant::user_level_admin, Constant::user_level_host],
         ];
         $remember = $request->remember;
 

@@ -283,6 +283,10 @@
 
 })(jQuery);
 
+function numberWithCommas(x) {
+    return x.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function addCart(productId) {
     $.ajax({
         type: "GET",
@@ -297,17 +301,17 @@ function addCart(productId) {
             let cartHover_existItem = cartHover_tbody.find("tr" + "[data-rowId='" + response['cart'].rowId + "']");
 
             if (cartHover_existItem.length) {
-                cartHover_existItem.find('.product-selected p').text(response['cart'].price.toFixed(0) + ' đ x ' + response['cart'].qty);
+                cartHover_existItem.find('.product-selected p').text(numberWithCommas(response['cart'].price.toFixed(0)) + ' đ x ' + response['cart'].qty);
             } else {
                 let newItem =
                     '<tr data-rowId="' + response['cart'].rowId + '">\n' +
                     '<td class = "si-pic">\n' +
-                    '<img style = "margin: auto; width: 8vw; height: 15vh;"\n' +
+                    '<img style = "margin: auto; width: 50rem; height: 8rem;"\n' +
                     'src = "front/img/products/' + response['cart'].options.images[0].path + '" alt = "" >\n' +
                     '</td>\n' +
                     '<td class = "si-text">\n' +
                     '<div class = "product-selected">\n' +
-                    '<p>' + response['cart'].price.toFixed(0) + ' đ x ' + response['cart'].qty + '</p>\n' +
+                    '<p>' + numberWithCommas(response['cart'].price.toFixed(0)) + ' đ x ' + response['cart'].qty + '</p>\n' +
                     '<h6>' + response['cart'].name + '</h6>\n' +
                     '</div>\n' +
                     '</td>\n' +

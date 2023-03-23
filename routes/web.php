@@ -1,11 +1,18 @@
 <?php
 
-use App\Http\Controllers\Front\HomeController;
+
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckOutController;
 use App\Http\Controllers\Front\AccountController;
+use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ProductCategoryController;
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductImageController;
+use App\Http\Controllers\Admin\ProductDetailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,8 +66,18 @@ Route::prefix('account')->group(function () {
 });
 
 //Dashboard Admin
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
+    Route::redirect('', 'admin/user');
     Route::resource('user', UserController::class);
+    Route::prefix('login')->withoutMiddleware('CheckAdminLogin')->group(function () {
+        Route::get('/',[App\Http\Controllers\Admin\HomeController::class, 'getLogin']);
+        Route::post('/',[App\Http\Controllers\Admin\HomeController::class, 'postLogin']);
+    });
+    Route::get('logout',[App\Http\Controllers\Admin\HomeController::class, 'logout']);
+    Route::resource('category', ProductCategoryController::class);
+    Route::resource('brand', BrandController::class);
+    Route::resource('product', ProductController::class);
+    Route::resource('product/{id}/image', ProductImageController::class);
+    Route::resource('product/{id}/detail', ProductDetailController::class);
+    Route::resource('order', OrderController::class);
 });
-
-

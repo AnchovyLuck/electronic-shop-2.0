@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 
-@section('title', 'User')
+@section('title', 'Sản phẩm')
 
 @section('body')
 <!-- Main -->
@@ -12,7 +12,7 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    User
+                    Product
                     <div class="page-title-subheading">
                         View, create, update, delete and manage.
                     </div>
@@ -20,7 +20,7 @@
             </div>
 
             <div class="page-title-actions">
-                <a href="./admin/user/create" class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
+                <a href="admin/product/create" class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
                     <span class="btn-icon-wrapper pr-2 opacity-7">
                         <i class="fa fa-plus fa-w-20"></i>
                     </span>
@@ -33,11 +33,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="main-card mb-3 card">
+
                 <div class="card-header">
+
                     <form>
                         <div class="input-group">
                             <input type="search" name="search" id="search"
-                                placeholder="Search everything" class="form-control">
+                                placeholder="Search everything" class="form-control" value="{{request('search')}}">
                             <span class="input-group-append">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-search"></i>&nbsp;
@@ -56,59 +58,67 @@
                 </div>
 
                 <div class="table-responsive">
-                    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <table class="align-middle mb-0 table table-borderless table-striped table-hover container">
                         <thead>
-                            <tr>
-                                <th class="text-center">ID</th>
-                                <th>Full Name</th>
-                                <th class="text-center">Email</th>
-                                <th class="text-center">Level</th>
-                                <th class="text-center">Actions</th>
+                            <tr class="row">
+                                <th class="text-center col">ID</th>
+                                <th class="col-4" style="padding-left: 10vw;">Name / Brand</th>
+                                <th class="text-center col">Price</th>
+                                <th class="text-center col">Qty</th>
+                                <th class="text-center col">Featured</th>
+                                <th class="text-center col-2">Actions</th>
                             </tr>
                         </thead>
+
                         <tbody>
-                            @foreach ($users as $user)
-                                <tr>
-                                    <td class="text-center text-muted">#{{$user->id}}</td>
-                                    <td>
+                            @foreach ($products as $product)
+                                <tr class="row">
+                                    <td class="text-center text-muted col">#{{$product->id}}</td>
+                                    <td class="col-4">
                                         <div class="widget-content p-0">
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left mr-3">
-                                                    <div class="widget-content-left">
-                                                        <img width="40" class="rounded-circle"
+                                                    <div class="widget-content-left" style="padding-bottom: 10vh;">
+                                                        <img style="height: 60px;"
                                                             data-toggle="tooltip" title="Image"
                                                             data-placement="bottom"
-                                                            src="front/img/user/{{$user->avatar ?? 'default-avatar.jpg'}}" alt="">
+                                                            src="front/img/products/{{$product->productImages[0]->path ?? ''}}" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="widget-content-left flex2">
-                                                    <div class="widget-heading">{{$user->name}}</div>
+                                                    <div class="widget-heading text-justify">{{$product->name}}</div>
+                                                    <div class="widget-subheading opacity-7">
+                                                        {{$product->brand->name}}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-center">{{$user->email}}</td>
-                                    <td class="text-center">
-                                        {{\App\Utilities\Constant::$user_level[$user->level]}}
+                                    <td class="text-center col">{{$product->discount != null ? number_format($product->discount, 0) : number_format($product->price, 0)}} đ</td>
+                                    <td class="text-center col">{{$product->qty}}</td>
+                                    <td class="text-center col">
+                                        <div class="badge badge-success mt-2">
+                                            {{$product->featured  ? 'Yes' : 'No'}}
+                                        </div>
                                     </td>
-                                    <td class="text-center">
-                                        <a href="./admin/user/{{$user->id}}"
+                                    <td class="text-center col-2">
+                                        <a href="admin/product/{{$product->id}}"
                                             class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
                                             Details
                                         </a>
-                                        <a href="./admin/user/{{$user->id}}/edit" data-toggle="tooltip" title="Edit"
+                                        <a href="admin/product/{{$product->id}}/edit" data-toggle="tooltip" title="Edit"
                                             data-placement="bottom" class="btn btn-outline-warning border-0 btn-sm">
                                             <span class="btn-icon-wrapper opacity-8">
                                                 <i class="fa fa-edit fa-w-20"></i>
                                             </span>
                                         </a>
-                                        <form class="d-inline" action="./admin/user/{{$user->id}}" method="post">
+                                        <form class="d-inline" action="admin/product/{{$product->id}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
                                                 type="submit" data-toggle="tooltip" title="Delete"
                                                 data-placement="bottom"
-                                                onclick="return confirm('Bạn muốn xóa người dùng này sao?')">
+                                                onclick="return confirm('Bạn muốn xóa sản phẩm này sao?')">
                                                 <span class="btn-icon-wrapper opacity-8">
                                                     <i class="fa fa-trash fa-w-20"></i>
                                                 </span>
@@ -122,7 +132,7 @@
                 </div>
 
                 <div class="d-block card-footer">
-                    {{$users->links()}}
+                    {{$products->links()}}
                 </div>
 
             </div>
