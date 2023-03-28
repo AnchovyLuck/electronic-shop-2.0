@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Services\Order\OrderServiceInterface;
 use App\Services\OrderDetail\OrderDetailServiceInterface;
+use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use App\Utilities\Constant;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -14,10 +15,13 @@ class CheckOutController extends Controller
 {
     private $orderService;
     private $orderDetailService;
+    private $productCategoryService;
 
-    public function __construct(OrderServiceInterface $orderService, OrderDetailServiceInterface $orderDetailService) {
+    public function __construct(OrderServiceInterface $orderService, OrderDetailServiceInterface $orderDetailService, 
+    ProductCategoryServiceInterface $productCategoryService) {
         $this->orderService = $orderService;
         $this->orderDetailService = $orderDetailService;
+        $this->productCategoryService = $productCategoryService;
     }
 
     public function index() {

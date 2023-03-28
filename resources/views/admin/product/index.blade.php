@@ -12,9 +12,9 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    Product
+                    Sản phẩm
                     <div class="page-title-subheading">
-                        View, create, update, delete and manage.
+                        Các tính năng CRUD
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     <span class="btn-icon-wrapper pr-2 opacity-7">
                         <i class="fa fa-plus fa-w-20"></i>
                     </span>
-                    Create
+                    Tạo mới
                 </a>
             </div>
         </div>
@@ -43,7 +43,7 @@
                             <span class="input-group-append">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-search"></i>&nbsp;
-                                    Search
+                                    Tìm kiếm
                                 </button>
                             </span>
                         </div>
@@ -51,8 +51,8 @@
 
                     <div class="btn-actions-pane-right">
                         <div role="group" class="btn-group-sm btn-group">
-                            <button class="btn btn-focus">This week</button>
-                            <button class="active btn btn-focus">Anytime</button>
+                            <button class="btn btn-focus">Tuần này</button>
+                            <button class="active btn btn-focus">Tất cả</button>
                         </div>
                     </div>
                 </div>
@@ -62,11 +62,11 @@
                         <thead>
                             <tr class="row">
                                 <th class="text-center col">ID</th>
-                                <th class="col-4" style="padding-left: 10vw;">Name / Brand</th>
-                                <th class="text-center col">Price</th>
-                                <th class="text-center col">Qty</th>
-                                <th class="text-center col">Featured</th>
-                                <th class="text-center col-2">Actions</th>
+                                <th class="col-4" style="padding-left: 10vw;">Tên / Thương hiệu</th>
+                                <th class="text-center col">Giá</th>
+                                <th class="text-center col">Số lượng</th>
+                                <th class="text-center col">Nổi bật</th>
+                                <th class="text-center col-2">Hành động</th>
                             </tr>
                         </thead>
 
@@ -104,7 +104,7 @@
                                     <td class="text-center col-2">
                                         <a href="admin/product/{{$product->id}}"
                                             class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                            Details
+                                            Chi tiết
                                         </a>
                                         <a href="admin/product/{{$product->id}}/edit" data-toggle="tooltip" title="Edit"
                                             data-placement="bottom" class="btn btn-outline-warning border-0 btn-sm">

@@ -1,6 +1,6 @@
 <form action="{{request()->segment(2) == 'product' ? 'shop' : ''}}">
     <div class="filter-widget">
-        <h4 class="fw-title">Categories</h4>
+        <h4 class="fw-title">Nhu cầu sử dụng</h4>
         <ul class="filter-catagories">
             @foreach ($categories as $category)
                 <li><a href="shop/category/{{$category->name}}">{{$category->name}}</a></li>
@@ -8,7 +8,7 @@
         </ul>
     </div>
     <div class="filter-widget">
-        <h4 class="fw-title">Brand</h4>
+        <h4 class="fw-title">Thương hiệu</h4>
         <div class="fw-brand-check">
             @foreach ($brands as $brand)
                 <div class="bc-item">
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="filter-widget">
-        <h4 class="fw-title">Price</h4>
+        <h4 class="fw-title">Giá</h4>
         <div class="filter-range-wrap">
             <div class="range-slider">
                 <div class="price-input">
@@ -40,10 +40,10 @@
                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
             </div>
         </div>
-        <button type="submit" class="filter-btn">Filter</button>
+        <button type="submit" class="filter-btn">Lọc theo giá</button>
     </div>
     <div class="filter-widget">
-        <h4 class="fw-title">Color</h4>
+        <h4 class="fw-title">Màu sắc</h4>
         <div class="fw-color-choose">
             <div class="cs-item">
                 <input type="radio" id="cs-black" name="color" value="black" onchange="this.form.submit();"

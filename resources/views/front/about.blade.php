@@ -85,9 +85,9 @@
                             tra trước khi thanh toán.
                         </li>
                         <li>
-                            <span>Giao hàng tận nơi (optional):</span> Trang web sẽ tích hợp các dịch vụ giao hàng để đáp ứng nhu cầu của người
-                            dùng. Người dùng có thể chọn các hình thức giao hàng khác nhau, bao gồm giao hàng tận nơi,
-                            giao hàng tại nhà sách, và nhiều hình thức khác nữa.
+                            <span>Đặt hàng:</span> Trang web sẽ tích hợp dịch vụ thanh toán để đáp ứng nhu cầu của người
+                            dùng. Người dùng có thể chọn các hình thức thanh toán khác nhau, bao gồm thanh toán khi nhận hàng
+                            và thanh toán trực tuyến.
                         </li>
                         <li>
                             <span>Đánh giá và bình luận:</span> Người dùng có thể đánh giá và bình luận về các sản phẩm trên trang
@@ -101,8 +101,8 @@
                     <ul>
                         <li><h5>Đối với admin:</h5></li>
                         <li>
-                            <span>Các chức năng CRUD:</span> Admin có thể thêm, sửa, xóa, xem danh sách các sản phẩm, thương hiệu, 
-                            người dùng có trong cơ sở dữ liệu thông qua trang dành cho admin.
+                            <span>Các chức năng CRUD:</span> Admin có thể thêm, sửa, xóa, xem sản phẩm, loại sản phẩm, thương hiệu và
+                            người dùng khác có trong cơ sở dữ liệu thông qua trang dành cho admin.
                         </li>
                     </ul>
                 </div>

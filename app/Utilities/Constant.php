@@ -13,14 +13,14 @@ class Constant {
     const order_status_Finish = 7;
     const order_status_Cancel = 0;
     public static $order_status = [
-        self::order_status_ReceiveOrders => 'Receive Orders',
-        self::order_status_Unconfirmed => 'Unconfirmed',
-        self::order_status_Confirmed => 'Confirmed',
-        self::order_status_Paid => 'Paid',
-        self::order_status_Processing => 'Processing',
-        self::order_status_Shipping => 'Shipping',
-        self::order_status_Finish => 'Finish',
-        self::order_status_Cancel => 'Cancel',
+        self::order_status_ReceiveOrders => 'Nhận đơn hàng',
+        self::order_status_Unconfirmed => 'Chưa xác thực',
+        self::order_status_Confirmed => 'Đã xác thực',
+        self::order_status_Paid => 'Đã thanh toán',
+        self::order_status_Processing => 'Đang xử lý',
+        self::order_status_Shipping => 'Đang vận chuyển',
+        self::order_status_Finish => 'Hoàn tất',
+        self::order_status_Cancel => 'Hủy',
     ];
 
     //User

@@ -13,4 +13,7 @@ class UserService extends BaseService implements UserServiceInterface {
         $this->repository = $UserRepository;
     }
 
+    public function getInfo($userId) {
+        return $this->repository->getInfo($userId);
+    }
 }

@@ -13,9 +13,9 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    Category
+                    Chỉnh sửa loại sản phẩm
                     <div class="page-title-subheading">
-                        View, create, update, delete and manage.
+                        Các tính năng CRUD
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                         @csrf
                         @method('PUT')
                         <div class="position-relative row form-group">
-                            <label for="name" class="col-md-3 text-md-right col-form-label">Name</label>
+                            <label for="name" class="col-md-3 text-md-right col-form-label">Tên loại sản phẩm</label>
                             <div class="col-md-9 col-xl-8">
                                 <input required name="name" id="name" placeholder="Name" type="text"
                                     class="form-control" value="{{$productCategory->name}}">
@@ -43,7 +43,7 @@
                                     <span class="btn-icon-wrapper pr-1 opacity-8">
                                         <i class="fa fa-times fa-w-20"></i>
                                     </span>
-                                    <span>Cancel</span>
+                                    <span>Hủy</span>
                                 </a>
 
                                 <button type="submit"
@@ -51,7 +51,7 @@
                                     <span class="btn-icon-wrapper pr-2 opacity-8">
                                         <i class="fa fa-download fa-w-20"></i>
                                     </span>
-                                    <span>Save</span>
+                                    <span>Lưu</span>
                                 </button>
                             </div>
                         </div>

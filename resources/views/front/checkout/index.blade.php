@@ -10,7 +10,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="/"><i class="fa fa-home"></i> Home</a>
-                        <span>Check out</span>
+                        <span>Đặt hàng</span>
                     </div>
                 </div>
             </div>

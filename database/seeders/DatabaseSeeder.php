@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert( [
             'id' => 1,
-            'name' => 'Phuc Tien',
+            'name' => 'Phúc Tiến',
             'email' => 'tiencacom20@gmail.com',
             'password' => Hash::make('123456'),
-            'avatar' => null,
+            'avatar' => 'ptien.png',
             'level' => 1,
-            'description' => null,
+            'description' => 'CS Student',
 
             'company_name' => 'LapTop',
             'country' => 'Viet Nam',
@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Shane Lynch',
                 'email' => 'ShaneLynch@gmail.com',
                 'password' => Hash::make('123456'),
-                'avatar' => 'avatar-0.png',
+                'avatar' => null,
                 'level' => 2,
                 'description' => 'Aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum bore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud amodo'
             ],
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Brandon Kelley',
                 'email' => 'BrandonKelley@gmail.com',
                 'password' => Hash::make('123456'),
-                'avatar' => 'avatar-1.png',
+                'avatar' => null,
                 'level' => 1,
                 'description' => null,
             ],
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Roy Banks',
                 'email' => 'RoyBanks@gmail.com',
                 'password' => Hash::make('123456'),
-                'avatar' => 'avatar-2.png',
+                'avatar' => null,
                 'level' => 1,
                 'description' => null,
             ],

@@ -13,9 +13,9 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    Product
+                    Chi tiết sản phẩm
                     <div class="page-title-subheading">
-                        View, create, update, delete and manage.
+                        Các tính năng CRUD
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="card-body display_data">
 
                     <div class="position-relative row form-group">
-                        <label for="" class="col-md-3 text-md-right col-form-label">Images</label>
+                        <label for="" class="col-md-3 text-md-right col-form-label">Ảnh</label>
                         <div class="col-md-9 col-xl-8">
                             <ul class="text-nowrap overflow-auto" id="images">
                                 @foreach ($product->productImages as $productImage)
@@ -43,23 +43,23 @@
 
                     <div class="position-relative row form-group">
                         <label for="brand_id"
-                            class="col-md-3 text-md-right col-form-label">Product Images</label>
+                            class="col-md-3 text-md-right col-form-label">Ảnh sản phẩm</label>
                         <div class="col-md-9 col-xl-8">
-                            <p><a href="admin/product/{{$product->id}}/image">Manage images</a></p>
+                            <p><a href="admin/product/{{$product->id}}/image">Quản lý ảnh</a></p>
                         </div>
                     </div>
 
                     <div class="position-relative row form-group">
                         <label for="brand_id"
-                            class="col-md-3 text-md-right col-form-label">Product Details</label>
+                            class="col-md-3 text-md-right col-form-label">Chi tiết sản phẩm</label>
                         <div class="col-md-9 col-xl-8">
-                            <p><a href="admin/product/{{$product->id}}/detail">Manage details</a></p>
+                            <p><a href="admin/product/{{$product->id}}/detail">Quản lý chi tiết</a></p>
                         </div>
                     </div>
 
                     <div class="position-relative row form-group">
                         <label for="brand_id"
-                            class="col-md-3 text-md-right col-form-label">Brand</label>
+                            class="col-md-3 text-md-right col-form-label">Thương hiệu</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$product->brand->name}}</p>
                         </div>
@@ -67,14 +67,14 @@
 
                     <div class="position-relative row form-group">
                         <label for="product_category_id"
-                            class="col-md-3 text-md-right col-form-label">Category</label>
+                            class="col-md-3 text-md-right col-form-label">Loại sản phẩm</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$product->productCategory->name}}</p>
                         </div>
                     </div>
                 
                     <div class="position-relative row form-group">
-                        <label for="name" class="col-md-3 text-md-right col-form-label">Name</label>
+                        <label for="name" class="col-md-3 text-md-right col-form-label">Tên sản phẩm</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$product->name}}</p>
                         </div>
@@ -82,7 +82,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="content"
-                            class="col-md-3 text-md-right col-form-label">Content</label>
+                            class="col-md-3 text-md-right col-form-label">Nội dung</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$product->content}}</p>
                         </div>
@@ -90,7 +90,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="price"
-                            class="col-md-3 text-md-right col-form-label">Price</label>
+                            class="col-md-3 text-md-right col-form-label">Giá</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{number_format($product->price,0)}} đ</p>
                         </div>
@@ -98,7 +98,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="discount"
-                            class="col-md-3 text-md-right col-form-label">Discount</label>
+                            class="col-md-3 text-md-right col-form-label">Giá khuyến mãi</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{number_format($product->discount,0)}} đ</p>
                         </div>
@@ -106,7 +106,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="qty"
-                            class="col-md-3 text-md-right col-form-label">Qty</label>
+                            class="col-md-3 text-md-right col-form-label">Số lượng</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$product->qty}}</p>
                         </div>
@@ -114,9 +114,9 @@
 
                     <div class="position-relative row form-group">
                         <label for="weight"
-                            class="col-md-3 text-md-right col-form-label">Weight</label>
+                            class="col-md-3 text-md-right col-form-label">Khối lượng</label>
                         <div class="col-md-9 col-xl-8">
-                            <p>{{$product->weight}}</p>
+                            <p>{{$product->weight}} kg</p>
                         </div>
                     </div>
                     
@@ -138,7 +138,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="featured"
-                            class="col-md-3 text-md-right col-form-label">Featured</label>
+                            class="col-md-3 text-md-right col-form-label">Nổi bật</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$product->featured ? 'Yes' : 'No'}}</p>
                         </div>
@@ -146,7 +146,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="description"
-                            class="col-md-3 text-md-right col-form-label">Description</label>
+                            class="col-md-3 text-md-right col-form-label">Mô tả</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{!!$product->description!!}</p>
                         </div>

@@ -42,7 +42,7 @@
             <div class="container">
                 <div class="ht-left">
                     <div class="mail-service">
-                        <i class="fa fa-envelope"></i><span>nightlongbytom@gmail.com</span>
+                        <i class="fa fa-envelope"></i><span>loser@gmail.com</span>
                     </div>
                     <div class="phone-service">
                         <i class="fa fa-phone"></i><span> +84 36.758.7383</span>
@@ -55,13 +55,6 @@
                     @else
                         <a href="account/login" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
                     @endif
-
-                    <div class="lan-selector">
-                        <select name="countries" id="coutries" class="language_drop" style="width:300px;">
-                            <option value="yt" data-image="front/img/flag-1.jpg" data-imagecss="flag yt" data-title="English">English</option>
-                            <option value="yu" data-image="front/img/flag-2.jpg" data-imagecss="flag yu" data-title="Bangladesh">German</option>
-                        </select>
-                    </div>
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>
@@ -72,21 +65,19 @@
             </div>
         </div>
         <div class="container">
+            <a href="/" class="logo">
+                <img src="front/img/laptop.png" height="20" width="500" alt="logo" style="margin-left: auto; margin-right: auto;">
+            </a>
             <div class="inner-header">
                 <div class="row">
                     <div class="col-md-2">
-                        <div class="logo">
-                            <a href="/">
-                                <img src="front/img/laptop.png" heihgt="25" alt="logo">
-                            </a>
-                        </div>
                     </div>
                     <div class="col-md-7">
                         <form action="shop">
                             <div class="advanced-search">
-                                <button type="button" class="category-btn">All Categories</button>
+                                <button type="button" class="category-btn">Disabled</button>
                                 <div class="input-group">
-                                    <input class="text-dark font-weight-bold" name="search" value="{{request('search')}}" type="text" placeholder="What do you need?">
+                                    <input class="text-dark font-weight-bold" name="search" value="{{request('search')}}" type="text" placeholder="Nhập tên sản phẩm bạn cần?">
                                     <button type="submit"><i class="ti-search"></i></button>
                                 </div>
                             </div>
@@ -131,8 +122,8 @@
                                         <h5>{{Cart::total()}} đ</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="./cart" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="checkout" class="primary-btn checkout-btn">CHECK OUT</a>
+                                        <a href="./cart" class="primary-btn view-card">GIỎ HÀNG</a>
+                                        <a href="checkout" class="primary-btn checkout-btn">ĐẶT HÀNG</a>
                                     </div>
                                 </div>
                             </li>
@@ -144,42 +135,29 @@
         </div>
         <div class="nav-item">
             <div class="container">
-                <div class="nav-depart">
+                <div class="nav-depart" style="padding-left: 10vw;">
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
-                        <span>All departments</span>
+                        <span>Nhu cầu sử dụng</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="#">Gaming</a></li>
-                            <li><a href="# ">Sinh viên - Văn phòng</a></li>
-                            <li><a href="# ">Thiết kế đồ họa</a></li>
-                            <li><a href="# ">Mỏng nhẹ</a></li>
-                            <li><a href="# ">Doanh nhân</a></li>
+                            @foreach ($categories as $category)
+                                <li><a href="shop/category/{{$category->name}}">{{$category->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li class="{{(request()->segment(1) == '') ? 'active' : ''}}"><a href="/">Home</a></li>
-                        <li class="{{(request()->segment(1) == 'shop') ? 'active' : ''}}"><a href="shop">Shop</a></li>
-                        <li class="{{(request()->segment(1) == 'collection') ? 'active' : ''}}"><a href="#">Collection</a>
+                        <li class="{{(request()->segment(1) == 'shop') ? 'active' : ''}}"><a href="shop">Sản phẩm</a></li>
+                        <li class="{{(request()->segment(1) == 'about') ? 'active' : ''}}"><a href="about">Giới thiệu</a></li>
+                        <li><a href="">Khác</a>
                             <ul class="dropdown">
-                                <li><a href="">Casual</a></li>
-                                <li><a href="">Dev</a></li>
-                                <li><a href="">Game Addicter</a></li>
-                            </ul>
-                        </li>
-                        <li class="{{(request()->segment(1) == 'blog') ? 'active' : ''}}"><a href="blog.html">Blog</a></li>
-                        <li class="{{(request()->segment(1) == 'contact') ? 'active' : ''}}"><a href="contact.html">Contact</a></li>
-                        <li><a href="">Pages</a>
-                            <ul class="dropdown">
-                                <li class="{{(request()->segment(1) == 'account/my-order') ? 'active' : ''}}"><a href="account/my-order">Xem đơn hàng</a></li>
-                                <li><a href="blog-details.html">Blog Details</a></li>
-                                <li><a href="./cart">Shopping Cart</a></li>
-                                <li><a href="checkout">Checkout</a></li>
-                                <li><a href="faq.html">Faq</a></li>
-                                <li class="{{(request()->segment(1) == 'about') ? 'active' : ''}}"><a href="about">About</a></li>
-                                <li><a href="account/register">Register</a></li>
-                                <li><a href="account/login">Login</a></li>
+                                <li class="{{(request()->segment(1) == 'account/my-order') ? 'active' : ''}}"><a href="account/my-order">Danh sách đơn hàng</a></li>
+                                <li><a href="./cart">Giỏ hàng</a></li>
+                                <li><a href="checkout">Đặt hàng</a></li>
+                                <li><a href="account/register">Đăng ký</a></li>
+                                <li><a href="account/login">Đăng nhập</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -257,33 +235,31 @@
                 </div>
                 <div class="col-lg-2 offset-lg-1">
                     <div class="footer-widget">
-                        <h5>Information</h5>
+                        <h5>Thông tin</h5>
                         <ul>
-                            <li><a href="about">About Us</a></li>
-                            <li><a href="checkout">Check out</a></li>
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Service</a></li>
+                            <li><a href="about">Giới thiệu</a></li>
+                            <li><a href="checkout">Đặt hàng</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="footer-widget">
-                        <h5>My account</h5>
+                        <h5>Tài khoản</h5>
                         <ul>
-                            <li><a href="">My account</a></li>
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Shopping Cart</a></li>
-                            <li><a href="">Shop</a></li>
+                            <li><a href="account/{{Auth::id()}}">Thông tin tài khoản</a></li>
+                            <li><a href="account/my-order">Danh sách đơn hàng</a></li>
+                            <li><a href="cart">Giỏ hàng</a></li>
+                            <li><a href="shop">Sản phẩm</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="newslatter-item">
-                        <h5>Join Out Newsletter Now</h5>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" name="" value="" placeholder="Enter your mail">
-                            <button type="button">Subscribe</button>
+                        <h5>Đăng ký nhận thông báo</h5>
+                        <p>Cập nhật thông tin về các sản phẩm và chương trình ưu đãi mới nhất của chúng tôi.</p>
+                        <form action="" class="subscribe-form">
+                            <input type="text" name="" value="" placeholder="Email của bạn">
+                            <button type="button">Đăng ký</button>
                         </form>
                     </div>
                 </div>

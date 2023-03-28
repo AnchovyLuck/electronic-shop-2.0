@@ -46,23 +46,25 @@ Route::prefix('cart')->group(function () {
 
 Route::get('about',[HomeController::class, 'about']);
 
-Route::prefix('checkout')->middleware('CheckMemberLogin')->group(function () {
-    Route::get('', [CheckOutController::class, 'index']);
-    Route::get('result', [CheckOutController::class, 'result']);
-    Route::post('/', [CheckOutController::class, 'addOrder']);
+Route::prefix('checkout')->group(function () {
+    Route::get('', [CheckOutController::class, 'index'])->middleware('CheckMemberLogin');
+    Route::get('result', [CheckOutController::class, 'result'])->middleware('CheckMemberLogin');
+    Route::post('/', [CheckOutController::class, 'addOrder'])->middleware('CheckMemberLogin');
     Route::get('vnPayCheck', [CheckOutController::class, 'vnPayCheck']);
 });
 
 Route::prefix('account')->group(function () {
-    Route::get('login', [AccountController::class, 'login']);
+    Route::get('login', [AccountController::class, 'login'])->middleware('CheckHasLogin');
     Route::post('login', [AccountController::class, 'checkLogin']);
     Route::get('logout', [AccountController::class, 'logout']);
-    Route::get('register', [AccountController::class, 'register']);
+    Route::get('register', [AccountController::class, 'register'])->middleware('CheckHasLogin');
     Route::post('register', [AccountController::class, 'postRegister']);
     Route::prefix('my-order')->middleware('CheckMemberLogin')->group(function () {
         Route::get('/', [AccountController::class, 'myOrderIndex']);
         Route::get('{id}', [AccountController::class, 'myOrderShow']);
     });
+    Route::get('{id}',[AccountController::class, 'myAccount'])->middleware('CheckMemberLogin');
+    Route::post('my-account',[AccountController::class, 'updateAccount'])->middleware('CheckMemberLogin');
 });
 
 //Dashboard Admin
@@ -81,3 +83,5 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function () {
     Route::resource('product/{id}/detail', ProductDetailController::class);
     Route::resource('order', OrderController::class);
 });
+
+Route::get('test',[HomeController::class, 'test']);

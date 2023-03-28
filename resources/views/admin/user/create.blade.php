@@ -13,9 +13,9 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    User
+                    Tạo mới người dùng
                     <div class="page-title-subheading">
-                        View, create, update, delete and manage.
+                        Các tính năng CRUD
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="position-relative row form-group">
-                            <label for="name" class="col-md-3 text-md-right col-form-label">Name</label>
+                            <label for="name" class="col-md-3 text-md-right col-form-label">Tên người dùng</label>
                             <div class="col-md-9 col-xl-8">
                                 <input required name="name" id="name" placeholder="Name" type="text"
                                     class="form-control" value="">
@@ -65,7 +65,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="password"
-                                class="col-md-3 text-md-right col-form-label">Password</label>
+                                class="col-md-3 text-md-right col-form-label">Mật khẩu</label>
                             <div class="col-md-9 col-xl-8">
                                 <input name="password" id="password" placeholder="Password" type="password"
                                     class="form-control" value="">
@@ -74,7 +74,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="password_confirmation"
-                                class="col-md-3 text-md-right col-form-label">Confirm Password</label>
+                                class="col-md-3 text-md-right col-form-label">Xác nhận mật khẩu</label>
                             <div class="col-md-9 col-xl-8">
                                 <input name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" type="password"
                                     class="form-control" value="">
@@ -83,7 +83,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="company_name" class="col-md-3 text-md-right col-form-label">
-                                Company Name
+                                Công ty
                             </label>
                             <div class="col-md-9 col-xl-8">
                                 <input name="company_name" id="company_name"
@@ -94,7 +94,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="country"
-                                class="col-md-3 text-md-right col-form-label">Country</label>
+                                class="col-md-3 text-md-right col-form-label">Quốc gia</label>
                             <div class="col-md-9 col-xl-8">
                                 <input name="country" id="country" placeholder="Country"
                                     type="text" class="form-control" value="">
@@ -103,7 +103,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="street_address" class="col-md-3 text-md-right col-form-label">
-                                Street Address
+                                Địa chỉ
                             </label>
                             <div class="col-md-9 col-xl-8">
                                 <input name="street_address" id="street_address"
@@ -125,7 +125,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="town_city" class="col-md-3 text-md-right col-form-label">
-                                Town City
+                                Tỉnh / thành phố
                             </label>
                             <div class="col-md-9 col-xl-8">
                                 <input name="town_city" id="town_city" placeholder="Town City"
@@ -135,7 +135,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="phone"
-                                class="col-md-3 text-md-right col-form-label">Phone</label>
+                                class="col-md-3 text-md-right col-form-label">Điện thoại</label>
                             <div class="col-md-9 col-xl-8">
                                 <input required name="phone" id="phone" placeholder="Phone" type="tel"
                                     class="form-control" value="">
@@ -144,7 +144,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="level"
-                                class="col-md-3 text-md-right col-form-label">Level</label>
+                                class="col-md-3 text-md-right col-form-label">Vị trí</label>
                             <div class="col-md-9 col-xl-8">
                                 <select required name="level" id="level" class="form-control">
                                     <option value="">-- Level --</option>
@@ -154,12 +154,15 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                <small class="form-text text-muted">
+                                    Vị trí người dùng không thể thay đổi sau khi tạo
+                                </small>
                             </div>
                         </div>
 
                         <div class="position-relative row form-group">
                             <label for="description"
-                                   class="col-md-3 text-md-right col-form-label">Description</label>
+                                   class="col-md-3 text-md-right col-form-label">Mô tả</label>
                             <div class="col-md-9 col-xl-8">
                                 <textarea name="description" id="description" class="form-control"></textarea>
                             </div>
@@ -171,7 +174,7 @@
                                     <span class="btn-icon-wrapper pr-1 opacity-8">
                                         <i class="fa fa-times fa-w-20"></i>
                                     </span>
-                                    <span>Cancel</span>
+                                    <span>Hủy</span>
                                 </a>
 
                                 <button type="submit"
@@ -179,7 +182,7 @@
                                     <span class="btn-icon-wrapper pr-2 opacity-8">
                                         <i class="fa fa-download fa-w-20"></i>
                                     </span>
-                                    <span>Save</span>
+                                    <span>Lưu</span>
                                 </button>
                             </div>
                         </div>

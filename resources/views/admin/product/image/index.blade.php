@@ -13,9 +13,9 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    Product Images
+                    Ảnh sản phẩm
                     <div class="page-title-subheading">
-                        View, create, update, delete and manage.
+                        Các tính năng CRUD
                     </div>
                 </div>
             </div>
@@ -28,14 +28,14 @@
                 <div class="card-body">
 
                     <div class="position-relative row form-group">
-                        <label for="name" class="col-md-3 text-md-right col-form-label">Product Name</label>
+                        <label for="name" class="col-md-3 text-md-right col-form-label">Tên sản phẩm</label>
                         <div class="col-md-9 col-xl-8">
                             <textarea disabled placeholder="{{$product->name}}" class="form-control" cols="30" rows="3" value="{{$product->name}}"></textarea>
                         </div>
                     </div>
 
                     <div class="position-relative row form-group">
-                        <label for="" class="col-md-3 text-md-right col-form-label">Images</label>
+                        <label for="" class="col-md-3 text-md-right col-form-label">Ảnh</label>
                         <div class="col-md-9 col-xl-8">
                             <ul class="text-nowrap" id="images">
                                 @foreach ($productImages as $productImage)
@@ -67,7 +67,7 @@
 
                                             <input name="image" type="file" onchange="changeImg(this);"
                                                 accept="image/x-png,image/gif,image/jpeg,image/webp"
-                                                class="image form-control-file" style="display: none;">
+                                                class="image form-control-file" style="display: none;" multiple>
 
                                             <input type="hidden" name="product_id" value="{{$product->id}}">
                                         </div>
@@ -77,7 +77,7 @@
                                                     <span class="btn-icon-wrapper pr-2 opacity-8">
                                                         <i class="fa fa-check fa-w-20"></i>
                                                     </span>
-                                                    <span>OK</span>
+                                                    <span>Lưu thay đổi</span>
                                                 </button>
                                             </div>
                                         </div>

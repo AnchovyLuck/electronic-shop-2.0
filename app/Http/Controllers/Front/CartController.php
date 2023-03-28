@@ -4,15 +4,20 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Services\Product\ProductServiceInterface;
+use App\Services\ProductCategory\ProductCategoryService;
+use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
     private $productService;
+    private $productCategoryService;
 
-    public function __construct(ProductServiceInterface $productService) {
+    public function __construct(ProductServiceInterface $productService, 
+    ProductCategoryServiceInterface $productCategoryService) {
         $this->productService = $productService;
+        $this->productCategoryService = $productCategoryService;
     }
 
     public function index() {

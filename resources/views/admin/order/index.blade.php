@@ -12,7 +12,7 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    Order
+                    Đơn hàng
                     <div class="page-title-subheading">
                         Các tính năng CRUD
                     </div>
@@ -31,7 +31,7 @@
                     <form>
                         <div class="input-group">
                             <input type="search" name="search" id="search"
-                                placeholder="Search everything" class="form-control" value="request('search')">
+                                placeholder="Search everything" class="form-control" value="{{request('search')}}">
                             <span class="input-group-append">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-search"></i>&nbsp;
@@ -54,11 +54,11 @@
                         <thead class="container">
                             <tr class="row">
                                 <th class="text-center col-1">ID</th>
-                                <th class="text-center col-3">Customer / Products</th>
-                                <th class="text-center col">Address</th>
-                                <th class="text-center col">Amount</th>
-                                <th class="text-center col">Status</th>
-                                <th class="text-center col">Actions</th>
+                                <th class="text-center col-3">Khách hàng/Sản phẩm</th>
+                                <th class="text-center col">Địa chỉ</th>
+                                <th class="text-center col">Giá</th>
+                                <th class="text-center col">Trạng thái</th>
+                                <th class="text-center col">Hành động</th>
                             </tr>
                         </thead>
                         <tbody class="container">

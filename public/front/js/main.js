@@ -16,7 +16,7 @@
     --------------------*/
     $(window).on('load', function() {
         $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
+        $("#preloder").delay(100).fadeOut("slow");
     });
 
     /*------------------
@@ -49,7 +49,7 @@
         navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
         smartSpeed: 1200,
         autoHeight: false,
-        autoplay: true,
+        autoplay: false,
     });
 
     /*------------------
@@ -438,3 +438,19 @@ function updateCart(rowId, qty) {
         },
     });
 }
+
+// document.getElementById("dropdown-btn").addEventListener("mouseover", mouseOver);
+// document.getElementById("dropdown").addEventListener("mouseover", mouseOver);
+
+
+
+// document.getElementById("dropdown-btn").addEventListener("mouseout", mouseOut);
+// document.getElementById("dropdown").addEventListener("mouseout", mouseOut);
+
+// function mouseOVer() {
+//     document.getElementsByClassName("depart-hover")[0].style.display = "show";
+// }
+
+// function mouseOut() {
+//     document.getElementsByClassName("depart-hover")[0].style.display = "none";
+// }

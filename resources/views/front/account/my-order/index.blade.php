@@ -47,7 +47,7 @@
                                                 @endif
                                             </h5>
                                         </td>
-                                        <td class="total-price first-row">{{array_sum(array_column($order->orderDetails->toArray(), 'total'))}} đ</td>
+                                        <td class="total-price first-row">{{number_format(array_sum(array_column($order->orderDetails->toArray(), 'total')),0)}} đ</td>
                                         <td class="first-row">
                                             <a href="account/my-order/{{$order->id}}" class="btn">Chi tiết</a>
                                         </td>

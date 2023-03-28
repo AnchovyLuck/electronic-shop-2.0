@@ -12,9 +12,9 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    User
+                    Chi tiết thông tin người dùng
                     <div class="page-title-subheading">
-                        View, create, update, delete and manage.
+                        Các tính năng CRUD
                     </div>
                 </div>
             </div>
@@ -28,18 +28,18 @@
                 <span class="btn-icon-wrapper pr-2 opacity-8">
                     <i class="fa fa-edit fa-w-20"></i>
                 </span>
-                <span>Edit</span>
+                <span>Chỉnh sửa</span>
             </a>
         </li>
 
         <li class="nav-item delete">
             <form action="" method="post">
                 <button class="nav-link btn" type="submit"
-                    onclick="return confirm('Do you really want to delete this item?')">
+                    onclick="return confirm('Bạn muốn xóa người dùng này sao?')">
                     <span class="btn-icon-wrapper pr-2 opacity-8">
                         <i class="fa fa-trash fa-w-20"></i>
                     </span>
-                    <span>Delete</span>
+                    <span>Xóa</span>
                 </button>
             </form>
         </li>
@@ -62,7 +62,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="name" class="col-md-3 text-md-right col-form-label">
-                            Name
+                            Tên người dùng
                         </label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$user->name}}</p>
@@ -78,7 +78,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="company_name" class="col-md-3 text-md-right col-form-label">
-                            Company Name
+                            Công ty
                         </label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$user->company_name}}</p>
@@ -87,7 +87,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="country"
-                            class="col-md-3 text-md-right col-form-label">Country</label>
+                            class="col-md-3 text-md-right col-form-label">Quốc gia</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$user->country}}</p>
                         </div>
@@ -95,7 +95,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="street_address" class="col-md-3 text-md-right col-form-label">
-                            Street Address</label>
+                            Địa chỉ</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$user->street_address}}</p>
                         </div>
@@ -111,21 +111,21 @@
 
                     <div class="position-relative row form-group">
                         <label for="town_city" class="col-md-3 text-md-right col-form-label">
-                            Town City</label>
+                            Tỉnh / thành phố</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$user->town}}</p>
                         </div>
                     </div>
 
                     <div class="position-relative row form-group">
-                        <label for="phone" class="col-md-3 text-md-right col-form-label">Phone</label>
+                        <label for="phone" class="col-md-3 text-md-right col-form-label">Điện thoại</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$user->phone}}</p>
                         </div>
                     </div>
 
                     <div class="position-relative row form-group">
-                        <label for="level" class="col-md-3 text-md-right col-form-label">Level</label>
+                        <label for="level" class="col-md-3 text-md-right col-form-label">Vị trí</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{App\Utilities\Constant::$user_level[$user->level]}}</p>
                         </div>
@@ -133,7 +133,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="description"
-                            class="col-md-3 text-md-right col-form-label">Description</label>
+                            class="col-md-3 text-md-right col-form-label">Mô tả</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$user->description}}</p>
                         </div>

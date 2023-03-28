@@ -5,23 +5,30 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Services\User\UserServiceInterface;
 use App\Services\Order\OrderServiceInterface;
+use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use Illuminate\Http\Request;
 use App\Utilities\Constant;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
     private $userService;
     private $orderService;
+    private $productCategoryService;
 
-    public function __construct(UserServiceInterface $userService, OrderServiceInterface $orderService)
+    public function __construct(UserServiceInterface $userService, OrderServiceInterface $orderService, 
+    ProductCategoryServiceInterface $productCategoryService)
     {
         $this->userService = $userService;
         $this->orderService = $orderService;
+        $this->productCategoryService = $productCategoryService;
     }
 
     public function login() {
-        return view('front.account.login');
+        $categories = $this->productCategoryService->all();
+
+        return view('front.account.login', compact('categories'));
     }
 
     public function checkLogin(Request $request) {
@@ -46,8 +53,8 @@ class AccountController extends Controller
     }
 
     public function register() {
-
-        return view('front.account.register');
+        $categories = $this->productCategoryService->all();
+        return view('front.account.register', compact('categories'));
     }
 
     public function postRegister(Request $request) {
@@ -67,9 +74,9 @@ class AccountController extends Controller
     }
 
     public function myOrderIndex() {
+        $categories = $this->productCategoryService->all();
         $orders = $this->orderService->getOrderByUserId(Auth::id());
-
-        return view('front.account.my-order.index', compact('orders'));
+        return view('front.account.my-order.index', compact('orders', 'categories'));
     }
 
     public function myOrderShow($id) {
@@ -77,5 +84,23 @@ class AccountController extends Controller
         $status = Constant::$order_status[$order->status];
 
         return view('front.account.my-order.show', compact('order', 'status'));
+    }
+
+    public function myAccount() {
+        $info = User::find(Auth::id());
+        $categories = $this->productCategoryService->all();
+        return view('front.account.info', compact('info', 'categories'));
+    }
+
+    public function updateAccount($userId, Request $request)
+    {
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ];
+        User::where('id',$userId)->update(array('name'));
+
+        return $this->myAccount();
     }
 }

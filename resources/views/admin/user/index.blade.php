@@ -12,9 +12,9 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    User
+                    Người dùng
                     <div class="page-title-subheading">
-                        View, create, update, delete and manage.
+                        Các tính năng CRUD
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     <span class="btn-icon-wrapper pr-2 opacity-7">
                         <i class="fa fa-plus fa-w-20"></i>
                     </span>
-                    Create
+                    Tạo mới
                 </a>
             </div>
         </div>
@@ -41,7 +41,7 @@
                             <span class="input-group-append">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-search"></i>&nbsp;
-                                    Search
+                                    Tìm kiếm
                                 </button>
                             </span>
                         </div>
@@ -49,8 +49,8 @@
 
                     <div class="btn-actions-pane-right">
                         <div role="group" class="btn-group-sm btn-group">
-                            <button class="btn btn-focus">This week</button>
-                            <button class="active btn btn-focus">Anytime</button>
+                            <button class="btn btn-focus">Tuần này</button>
+                            <button class="active btn btn-focus">Tất cả</button>
                         </div>
                     </div>
                 </div>
@@ -60,10 +60,10 @@
                         <thead>
                             <tr>
                                 <th class="text-center">ID</th>
-                                <th>Full Name</th>
+                                <th>Tên người dùng</th>
                                 <th class="text-center">Email</th>
-                                <th class="text-center">Level</th>
-                                <th class="text-center">Actions</th>
+                                <th class="text-center">Vị trí</th>
+                                <th class="text-center">Hành động</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,7 +75,7 @@
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left mr-3">
                                                     <div class="widget-content-left">
-                                                        <img width="40" class="rounded-circle"
+                                                        <img width="40" height="20" class="rounded-circle"
                                                             data-toggle="tooltip" title="Image"
                                                             data-placement="bottom"
                                                             src="front/img/user/{{$user->avatar ?? 'default-avatar.jpg'}}" alt="">
@@ -94,7 +94,7 @@
                                     <td class="text-center">
                                         <a href="./admin/user/{{$user->id}}"
                                             class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
-                                            Details
+                                            Chi tiết
                                         </a>
                                         <a href="./admin/user/{{$user->id}}/edit" data-toggle="tooltip" title="Edit"
                                             data-placement="bottom" class="btn btn-outline-warning border-0 btn-sm">

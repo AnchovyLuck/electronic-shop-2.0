@@ -12,9 +12,9 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    Product Detail
+                    Chi tiết sản phẩm
                     <div class="page-title-subheading">
-                        View, create, update, delete and manage.
+                        Các tính năng CRUD
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     <span class="btn-icon-wrapper pr-2 opacity-7">
                         <i class="fa fa-plus fa-w-20"></i>
                     </span>
-                    Create
+                    Tạo mới
                 </a>
             </div>
         </div>
@@ -43,7 +43,7 @@
                             <span class="input-group-append">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-search"></i>&nbsp;
-                                    Search
+                                    Tìm kiếm
                                 </button>
                             </span>
                         </div>
@@ -51,8 +51,8 @@
 
                     <div class="btn-actions-pane-right">
                         <div role="group" class="btn-group-sm btn-group">
-                            <button class="btn btn-focus">This week</button>
-                            <button class="active btn btn-focus">Anytime</button>
+                            <button class="btn btn-focus">Tuần này</button>
+                            <button class="active btn btn-focus">Tất cả</button>
                         </div>
                     </div>
                 </div>
@@ -61,11 +61,11 @@
                     <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                         <thead class="container">
                             <tr class="row">
-                                <th class="text-center pl-4 col-4">Product Name</th>
-                                <th class="text-center col">Color</th>
+                                <th class="text-center pl-4 col-4">Tên sản phẩm</th>
+                                <th class="text-center col">Màu sắc</th>
                                 <th class="text-center col">RAM</th>
-                                <th class="text-center col">Qty</th>
-                                <th class="text-center col" class="text-center">Actions</th>
+                                <th class="text-center col">Số lượng</th>
+                                <th class="text-center col" class="text-center">Hành động</th>
                             </tr>
                         </thead>
                         <tbody class="container">

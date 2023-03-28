@@ -13,9 +13,9 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    Product
+                    Chỉnh sửa sản phẩm
                     <div class="page-title-subheading">
-                        View, create, update, delete and manage.
+                        Các tính năng CRUD
                     </div>
                 </div>
             </div>
@@ -31,10 +31,10 @@
                         @method('PUT')
                         <div class="position-relative row form-group">
                             <label for="brand_id"
-                                class="col-md-3 text-md-right col-form-label">Brand</label>
+                                class="col-md-3 text-md-right col-form-label">Thương hiệu</label>
                             <div class="col-md-9 col-xl-8">
                                 <select required name="brand_id" id="brand_id" class="form-control">
-                                    <option value="">-- Brand --</option>
+                                    <option value="">-- Chọn --</option>
                                     @foreach ($brands as $brand)
                                         <option {{$product->brand_id === $brand->id ? 'selected' : ''}} value={{$brand->id}}>
                                             {{$brand->name}}
@@ -46,10 +46,10 @@
 
                         <div class="position-relative row form-group">
                             <label for="product_category_id"
-                                class="col-md-3 text-md-right col-form-label">Category</label>
+                                class="col-md-3 text-md-right col-form-label">Loại sản phẩm</label>
                             <div class="col-md-9 col-xl-8">
                                 <select required name="product_category_id" id="product_category_id" class="form-control">
-                                    <option value="">-- Category --</option>
+                                    <option value="">-- Chọn --</option>
                                     @foreach ($categories as $category)
                                         <option {{$product->product_category_id === $category->id ? 'selected' : ''}} value={{$category->id}}>
                                             {{$category->name}}
@@ -60,7 +60,7 @@
                         </div>
                     
                         <div class="position-relative row form-group">
-                            <label for="name" class="col-md-3 text-md-right col-form-label">Name</label>
+                            <label for="name" class="col-md-3 text-md-right col-form-label">Tên sản phẩm</label>
                             <div class="col-md-9 col-xl-8">
                                 <input required name="name" id="name" placeholder="Name" type="text"
                                     class="form-control" value="{{$product->name}}">
@@ -69,7 +69,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="content"
-                                class="col-md-3 text-md-right col-form-label">Content</label>
+                                class="col-md-3 text-md-right col-form-label">Nội dung</label>
                             <div class="col-md-9 col-xl-8">
                                 <input required name="content" id="content"
                                     placeholder="Content" type="text" class="form-control" value="{{$product->content}}">
@@ -78,7 +78,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="price"
-                                class="col-md-3 text-md-right col-form-label">Price</label>
+                                class="col-md-3 text-md-right col-form-label">Giá</label>
                             <div class="col-md-9 col-xl-8">
                                 <input required name="price" id="price"
                                     placeholder="Price" type="text" class="form-control" value="{{$product->price}}">
@@ -87,7 +87,7 @@
 
                         <div class="position-relative row form-group">
                             <label for="discount"
-                                class="col-md-3 text-md-right col-form-label">Discount</label>
+                                class="col-md-3 text-md-right col-form-label">Giá khuyến mãi</label>
                             <div class="col-md-9 col-xl-8">
                                 <input required name="discount" id="discount"
                                     placeholder="Discount" type="text" class="form-control" value="{{$product->discount}}">
@@ -96,10 +96,10 @@
 
                         <div class="position-relative row form-group">
                             <label for="weight"
-                                class="col-md-3 text-md-right col-form-label">Weight</label>
+                                class="col-md-3 text-md-right col-form-label">Khối lượng</label>
                             <div class="col-md-9 col-xl-8">
                                 <input required name="weight" id="weight"
-                                    placeholder="Weight" type="text" class="form-control" value="{{$product->weight}}">
+                                    placeholder="Weight" type="text" class="form-control" value="{{$product->weight}} kg">
                             </div>
                         </div>
                         
@@ -123,18 +123,18 @@
 
                         <div class="position-relative row form-group">
                             <label for="featured"
-                                class="col-md-3 text-md-right col-form-label">Featured</label>
+                                class="col-md-3 text-md-right col-form-label">Nổi bật</label>
                             <div class="col-md-9 col-xl-8">
                                 <div class="position-relative form-check pt-sm-2">
                                     <input name="featured" id="featured" type="checkbox" value="1" {{$product->featured ? 'checked' : ''}} class="form-check-input">
-                                    <label for="featured" class="form-check-label">Featured</label>
+                                    <label for="featured" class="form-check-label">Yes</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="position-relative row form-group">
                             <label for="description"
-                                class="col-md-3 text-md-right col-form-label">Description</label>
+                                class="col-md-3 text-md-right col-form-label">Mô tả</label>
                             <div class="col-md-9 col-xl-8">
                                 <textarea class="form-control" name="description" id="description" placeholder="Description">{{$product->description}}</textarea>
                             </div>
@@ -146,7 +146,7 @@
                                     <span class="btn-icon-wrapper pr-1 opacity-8">
                                         <i class="fa fa-times fa-w-20"></i>
                                     </span>
-                                    <span>Cancel</span>
+                                    <span>Hủy</span>
                                 </a>
 
                                 <button type="submit"
@@ -154,7 +154,7 @@
                                     <span class="btn-icon-wrapper pr-2 opacity-8">
                                         <i class="fa fa-download fa-w-20"></i>
                                     </span>
-                                    <span>Save</span>
+                                    <span>Lưu</span>
                                 </button>
                             </div>
                         </div>

@@ -12,7 +12,7 @@
                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                 </div>
                 <div>
-                    Đặt hàng
+                    Chi tiết đơn hàng
                     <div class="page-title-subheading">
                         Các chức năng CRUD
                     </div>
@@ -79,7 +79,7 @@
                         <hr>
                     <div class="position-relative row form-group">
                         <label for="name" class="col-md-3 text-md-right col-form-label">
-                            Full Name
+                            Họ tên khách hàng
                         </label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$order->first_name . ' ' . $order->last_name}}</p>
@@ -94,7 +94,7 @@
                     </div>
 
                     <div class="position-relative row form-group">
-                        <label for="phone" class="col-md-3 text-md-right col-form-label">Phone</label>
+                        <label for="phone" class="col-md-3 text-md-right col-form-label">Điện thoại</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$order->phone}}</p>
                         </div>
@@ -102,7 +102,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="company_name" class="col-md-3 text-md-right col-form-label">
-                            Company Name
+                            Công ty
                         </label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$order->company_name}}</p>
@@ -111,7 +111,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="street_address" class="col-md-3 text-md-right col-form-label">
-                            Street Address</label>
+                            Địa chỉ</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$order->street_address}}</p>
                         </div>
@@ -119,7 +119,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="town_city" class="col-md-3 text-md-right col-form-label">
-                            Town City</label>
+                            Tỉnh / Thành phố</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$order->town_city}}</p>
                         </div>
@@ -127,7 +127,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="country"
-                            class="col-md-3 text-md-right col-form-label">Country</label>
+                            class="col-md-3 text-md-right col-form-label">Quốc gia</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$order->country}}</p>
                         </div>
@@ -142,7 +142,7 @@
                     </div>
 
                     <div class="position-relative row form-group">
-                        <label for="payment_type" class="col-md-3 text-md-right col-form-label">Payment Type</label>
+                        <label for="payment_type" class="col-md-3 text-md-right col-form-label">Phương thức thanh toán</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$order->payment_type}}</p>
                         </div>
@@ -159,7 +159,7 @@
 
                     <div class="position-relative row form-group">
                         <label for="description"
-                            class="col-md-3 text-md-right col-form-label">Description</label>
+                            class="col-md-3 text-md-right col-form-label">Mô tả</label>
                         <div class="col-md-9 col-xl-8">
                             <p>{{$order->description}}</p>
                         </div>
