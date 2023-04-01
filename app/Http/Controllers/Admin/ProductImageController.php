@@ -42,7 +42,7 @@ class ProductImageController extends Controller
         $data = $request->all();
 
         if ($request->hasFile('image')) {
-            $data['path'] = Common::uploadFile($request->file('image'), 'front/img/products');
+            $data['path'] = Common::uploadFile($request->file('image'), 'front/img/upload');
             unset($data['image']);
 
             ProductImage::create($data);
@@ -83,7 +83,7 @@ class ProductImageController extends Controller
         //Xóa file
         $file_name = ProductImage::find($product_image_id)->path;
         if ($file_name != '') {
-            unlink('front/img/products/' . $file_name);
+            unlink('front/img/upload/' . $file_name);
         }
 
         //Xóa bản ghi file trong DB

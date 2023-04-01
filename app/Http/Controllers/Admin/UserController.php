@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use Illuminate\Http\Request;
 use App\Services\User\UserServiceInterface;
 use App\Utilities\Common;
@@ -14,10 +15,13 @@ class UserController extends Controller
      * Display a listing of the resource.
      */
     private $userService;
+    private $productCategoryService;
+    
 
-    public function __construct(UserServiceInterface $userService)
+    public function __construct(UserServiceInterface $userService, ProductCategoryServiceInterface $productCategoryService)
     {
         $this->userService = $userService;
+        $this->productCategoryService = $productCategoryService;
     }
 
     public function index(Request $request)

@@ -28,7 +28,8 @@ class CheckOutController extends Controller
         $carts = Cart::content();
         $total = Cart::total();
         $subtotal = Cart::subtotal();
-        return view('front.checkout.index', compact('carts', 'total', 'subtotal'));
+        $categories = $this->productCategoryService->all();
+        return view('front.checkout.index', compact('carts', 'total', 'subtotal','categories'));
     }
 
     public function addOrder(Request $request) {
@@ -147,7 +148,7 @@ class CheckOutController extends Controller
 
                 //Send email
                 $this->sendEmail($order, $subtotal, $total);
-                return redirect('checkout/result')->with('notification','Đặt hàng thành công. Vui lòng xác nhận qua gmail.');
+                return redirect('checkout/result')->with('notification','Đặt hàng thành công. Vui lòng kiểm tra đơn hàng qua gmail.');
             } else {
                 $this->orderService->delete($vnp_TxnRef);
 
@@ -158,7 +159,8 @@ class CheckOutController extends Controller
 
     public function result() {
         $notification = session('notification');
-        return view('front.checkout.result', compact('notification'));
+        $categories = $this->productCategoryService->all();
+        return view('front.checkout.result', compact('notification', 'categories'));
     }
 
     public function sendEmail($order, $subtotal, $total) {

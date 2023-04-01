@@ -14,7 +14,7 @@
             <section class="members">
                 <div class="container">
                     <div class="icon">
-                        <a href="https://www.facebook.com/anchovynut/"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
                     </div>
                     <img src="front/img/user/default-avatar.jpg" alt="">
                     <h2>Nguyễn Lê Phúc Tiến</h2>
@@ -59,8 +59,7 @@
                     </p>
 
                     <p>
-                        Chúng em sẽ nỗ lực hết sức để hoàn thành đề tài một cách nhanh nhất và sẵn sàng nhận những đóng 
-                        góp và ý kiến từ phía thầy cô và các bạn.
+                        Chúng em sẽ nỗ lực hết sức để kết thúc đề tài một cách nhanh nhất.
                     </p>
                     
                 </div>

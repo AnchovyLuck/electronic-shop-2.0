@@ -82,7 +82,7 @@
                                                         <img style="height: 60px;"
                                                             data-toggle="tooltip" title="Image"
                                                             data-placement="bottom"
-                                                            src="front/img/products/{{$product->productImages[0]->path ?? ''}}" alt="">
+                                                            src="front/img/upload/{{$product->productImages[0]->path ?? ''}}" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="widget-content-left flex2">

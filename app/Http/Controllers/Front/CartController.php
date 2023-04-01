@@ -24,8 +24,9 @@ class CartController extends Controller
         $carts = Cart::content();
         $total = Cart::total();
         $subtotal = Cart::subtotal();
+        $categories = $this->productCategoryService->all();
         
-        return view('front.shop.cart', compact('carts', 'total', 'subtotal'));
+        return view('front.shop.cart', compact('carts', 'total', 'subtotal','categories'));
     }
 
     public function add(Request $request) {

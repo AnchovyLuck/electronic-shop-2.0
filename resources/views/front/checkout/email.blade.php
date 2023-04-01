@@ -108,18 +108,18 @@
                                style="text-align: left;  width: 100%; margin-bottom: 5px; border-collapse: collapse;">
                             <thead>
                             <tr>
-                                <th style="padding: 5px 0;">SẢN PHẨM</th>
+                                <th style="padding: 5px 0; width: 70%;">SẢN PHẨM</th>
                                 <th style="padding: 5px 20px 5px 0; text-align: right;">TỔNG CỘNG</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($order->orderDetails as $orderDetail)
                                 <tr>
-                                    <td style="border-top: 1px solid #dee2e6; padding: 5px 0;">
+                                    <td style="border-top: 1px solid #dee2e6; padding: 5px 0; width:70%;">
                                         {{ $orderDetail->product->name . ' (x' . $orderDetail->qty . ')'}}
                                     </td>
                                     <td style="border-top: 1px solid #dee2e6; padding: 5px 20px 5px 0; text-align: right;">
-                                        {{ intval($orderDetail->total) }} đ
+                                        {{ number_format(intval($orderDetail->total),0) }} đ
                                     </td>
                                 </tr>
                             @endforeach
