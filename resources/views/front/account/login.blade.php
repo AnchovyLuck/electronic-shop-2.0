@@ -32,6 +32,11 @@
                         @endif
                         <form action="" method="post">
                             @csrf
+                            @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{session('status')}}
+                            </div>
+                            @endif
                             <div class="group-input">
                                 <label for="email">Địa chỉ email *</label>
                                 <input type="email" id="email" name="email">
@@ -47,7 +52,7 @@
                                         <input type="checkbox" id="save-pass" name="remember">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <a href="#" class="forget-pass">Quên mật khẩu ư? Click vào đây đi!</a>
+                                    <a href="account/forgot-password" class="forget-pass">Quên mật khẩu ư? Click vào đây đi!</a>
                                 </div>
                             </div>
                             <button type="submit" class="site-btn login-btn">Đăng nhập</button>

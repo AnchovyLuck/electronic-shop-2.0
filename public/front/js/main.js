@@ -425,7 +425,7 @@ function updateCart(rowId, qty) {
             if (qty === 0) {
                 cart_existItem.remove();
             } else {
-                cart_existItem.find('.total-price').text((response['cart'].price * response['cart'].qty).toFixed(0) + ' đ');
+                cart_existItem.find('.total-price').text(numberWithCommas((response['cart'].price * response['cart'].qty).toFixed(0)) + ' đ');
             }
 
 

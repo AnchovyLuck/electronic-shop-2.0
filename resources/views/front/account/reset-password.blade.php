@@ -11,7 +11,8 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="/"><i class="fa fa-home"></i> Home</a>
-                        <span>Register</span>
+                        <a href="login"><i class="fa fa-home"></i> Login</a>
+                        <span>Tạo mật khẩu mới</span>
                     </div>
                 </div>
             </div>
@@ -25,35 +26,26 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
-                        <h2>Đăng ký</h2>
-                        @if (session('notification'))
-                            <div class="alert alert-warning" role="alert">
-                                {{session('notification')}}
-                            </div>
-                        @endif
-                        <form action="" method="post">
+                        <h2>Thiết lập mật khẩu</h2>
+                        <form action="account/reset-password" method="post">
                             @csrf
-                            <div class="group-input">
-                                <label for="name">Họ và tên *</label>
-                                <input type="text" id="name" name="name">
-                            </div>
+                            <input type="hidden" name="token" value="{{$token}}">
                             <div class="group-input">
                                 <label for="email">Địa chỉ email *</label>
-                                <input type="email" id="email" name="email">
+                                <input readonly type="email" id="email" name="email" value="{{$email}}">
                             </div>
-                            <div class="group-input">
-                                <label for="pass">Mật khẩu *</label>
+                            <div class="group-input"> 
+                                <label for="pass">Mật khẩu mới *</label>
                                 <input type="password" id="pass" name="password">
+                                <span class="text-danger">@error('password'){{$message}}@enderror</span>
                             </div>
                             <div class="group-input">
-                                <label for="con-pass">Xác nhận mật khẩu *</label>
+                                <label for="con-pass">Xác nhận mật khẩu mới *</label>
                                 <input type="password" id="con-pass" name="password_confirmation">
+                                <span class="text-danger">@error('password_confirmation'){{$message}}@enderror</span>
                             </div>
-                            <button type="submit" class="site-btn register-btn">Đăng ký tài khoản</button>
+                            <button type="submit" class="site-btn register-btn">Xác nhận</button>
                         </form>
-                        <div class="switch-login">
-                            <a href="account/login" class="or-login">Đăng nhập</a>
-                        </div>
                     </div>
                 </div>
             </div>

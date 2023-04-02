@@ -58,7 +58,7 @@ class AccountController extends Controller
     }
 
     public function postRegister(Request $request) {
-        if ($request->password !== $request->password_confimation) {
+        if ($request->password !== $request->password_confirmation) {
             return back()->with('notification', 'Nhập sai mật khẩu xác nhận!');
         }
 
@@ -99,8 +99,10 @@ class AccountController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ];
-        User::where('id',$userId)->update(array('name'));
+        User::where('id',$userId)->update($data);
 
         return $this->myAccount();
     }
+
+    
 }

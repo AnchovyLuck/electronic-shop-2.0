@@ -167,8 +167,8 @@ class CheckOutController extends Controller
         $email_to = $order->email;
 
         Mail::send('front.checkout.email', compact('order','subtotal', 'total'), function ($message) use($email_to) {
-            $message->from('tiencacom20@gmail.com', 'Nightlongbytom');
-            $message->sender('john@johndoe.com', 'John Doe');
+            $message->from('laptop@mailtrap.com', 'Laptop');
+            $message->sender('anchovy@mailtrap.com', 'Anchovy');
             $message->to($email_to, $email_to);
             $message->subject('Xác nhận đơn hàng!');
         });
