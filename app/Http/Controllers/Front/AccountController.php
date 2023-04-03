@@ -82,8 +82,9 @@ class AccountController extends Controller
     public function myOrderShow($id) {
         $order = $this->orderService->find($id);
         $status = Constant::$order_status[$order->status];
+        $categories = $this->productCategoryService->all();
 
-        return view('front.account.my-order.show', compact('order', 'status'));
+        return view('front.account.my-order.show', compact('order', 'status', 'categories'));
     }
 
     public function myAccount() {

@@ -42,32 +42,23 @@
             <div class="container">
                 <div class="ht-left">
                     <div class="mail-service">
-                        <i class="fa fa-envelope"></i><span>loser@gmail.com</span>
+                        <i class="fa fa-envelope"></i><span>......@@gmail.com</span>
                     </div>
                     <div class="phone-service">
                         <i class="fa fa-phone"></i><span> +84 36.758.7383</span>
                     </div>
                 </div>
                 <div class="ht-right">
-                    
                     @if (Auth::check())
                         <a href="account/logout" class="login-panel"><i class="fa fa-user"></i>{{Auth::user()->name}} - Đăng xuất</a>
                     @else
                         <a href="account/login" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
                     @endif
-                    <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a>
-                    </div>
                 </div>
             </div>
         </div>
         <div class="container">
-            <a href="/" class="logo">
-                <img src="front/img/laptop.png" height="20" width="500" alt="logo" style="margin-left: auto; margin-right: auto;">
-            </a>
+            <img class="logo" src="front/img/laptop.png" height="20" width="500" alt="logo" style="margin-left: auto; margin-right: auto;">
             <div class="inner-header">
                 <div class="row">
                     <div class="col-md-2">
@@ -77,7 +68,7 @@
                             <div class="advanced-search">
                                 <button type="button" class="category-btn">Disabled</button>
                                 <div class="input-group">
-                                    <input class="text-dark font-weight-bold" name="search" value="{{request('search')}}" type="text" placeholder="Nhập tên sản phẩm bạn cần?">
+                                    <input class="text-dark font-weight-bold" name="search" value="{{request('search')}}" type="text" placeholder="Nhập tên sản phẩm bạn cần">
                                     <button type="submit"><i class="ti-search"></i></button>
                                 </div>
                             </div>
@@ -216,21 +207,13 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="index.html">
-                                <img src="front/img/footer-logo.png" height="25" alt="">
-                            </a>
+                            <img src="front/img/footer-logo.png" height="25" alt="">
                         </div>
                         <ul>
                             <li>123 Ninh Kieu - Can Tho</li>
                             <li>Phone: +84 36.758.7383</li>
-                            <li>Email: nightlongbytom@gmail.com</li>
+                            <li>Email: ......@gmail.com</li>
                         </ul>
-                        <div class="footer-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1">
@@ -258,7 +241,7 @@
                         <h5>Đăng ký nhận thông báo</h5>
                         <p>Cập nhật thông tin về các sản phẩm và chương trình ưu đãi mới nhất của chúng tôi.</p>
                         <form action="" class="subscribe-form">
-                            <input type="text" name="" value="" placeholder="Email của bạn">
+                            <input type="text" name="" value="" placeholder="Tính năng chưa được phát triển">
                             <button type="button">Đăng ký</button>
                         </form>
                     </div>
@@ -297,7 +280,7 @@
     <script src="front/js/jquery.slicknav.js "></script>
     <script src="front/js/owl.carousel.min.js "></script>
     <script src="front/js/owlcarousel2-filter.min.js "></script>
-    <script src="front/js/main.js "></script>
+    <script src="front/js/main.js"></script>
 </body>
 
 </html>

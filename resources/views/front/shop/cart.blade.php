@@ -28,11 +28,11 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th class="p-name">Product Name</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total</th>
+                                        <th>Ảnh</th>
+                                        <th class="p-name">Sản phẩm</th>
+                                        <th>Giá</th>
+                                        <th>Số lượng</th>
+                                        <th>Tổng cộng</th>
                                         <th><i onclick="confirm('Bạn muốn xóa tất cả sản phẩm khỏi giỏ hàng sao?') ? destroyCart() : ''" 
                                             class="ti-close" style="cursor: pointer;"></i></th>
                                     </tr>
@@ -62,26 +62,13 @@
                             </table>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4">
-                                <div class="cart-buttons">
-                                    <a href="#" class="primary-btn continue-shop">Continue shopping</a>
-                                    <a href="#" class="primary-btn up-cart">Update cart</a>
-                                </div>
-                                <div class="discount-coupon">
-                                    <h6>Discount Codes</h6>
-                                    <form action="#" class="coupon-form">
-                                        <input type="text" placeholder="Enter your codes">
-                                        <button type="submit" class="site-btn coupon-btn">Apply</button>
-                                    </form>
-                                </div>
-                            </div>
                             <div class="col-lg-4 offset-lg-4">
                                 <div class="proceed-checkout">
                                     <ul>
-                                        <li class="subtotal">Subtotal <span>{{$subtotal}} &nbsp<span style="text-transform: lowercase;"> đ</span></span></li>
-                                        <li class="cart-total">Total <span>{{$total}} &nbsp<span style="text-transform: lowercase;"> đ</span></span></li>
+                                        <li class="subtotal">Tổng giá <span>{{$subtotal}} &nbsp<span style="text-transform: lowercase;"> đ</span></span></li>
+                                        <li class="cart-total">Thành tiền <span>{{$total}} &nbsp<span style="text-transform: lowercase;"> đ</span></span></li>
                                     </ul>
-                                    <a href="checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                                    <a href="checkout" class="proceed-btn">ĐẶT HÀNG</a>
                                 </div>
                             </div>
                         </div>

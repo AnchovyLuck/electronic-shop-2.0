@@ -24,25 +24,25 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="front/img/banner-1.jpg" alt="staff-img" style="width: 10vw; height: 35vh;">
+                        <img src="front/img/banner-1.jpg" alt="staff-img">
                         <div class="inner-text">
-                            <h4>Staff</h4>
+                            <h4>Văn phòng</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="front/img/banner-2.jpg" alt="dev-img" style="width: 10vw; height: 35vh;">
+                        <img src="front/img/banner-2.jpg" alt="dev-img">
                         <div class="inner-text">
-                            <h4>Dev</h4>
+                            <h4>Gaming</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="front/img/banner-3.jpg" alt="student-img" style="width: 10vw; height: 35vh;">
+                        <img src="front/img/banner-3.jpg" alt="student-img">
                         <div class="inner-text">
-                            <h4>Student</h4>
+                            <h4>Sinh viên</h4>
                         </div>
                     </div>
                 </div>
@@ -57,8 +57,8 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="product-large set-bg" data-setbg="front/img/products/staff-large.jpg">
-                        <h2>Staff's</h2>
-                        <a href="#">Discover More</a>
+                        <h2>Đồ họa</h2>
+                        <a href="shop/category/Laptop%20Đồ%20họa">Xem thêm</a>
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-1">
@@ -104,53 +104,12 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="product-large set-bg" data-setbg="front/img/products/dev-large.jpg">
-                        <h2>Dev's</h2>
-                        <a href="#">Discover More</a>
+                        <h2>Gaming</h2>
+                        <a href="shop/category/Laptop%20Gaming">Xem thêm</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!--Dev Banner Section End-->
-
-    <!--Instagram Section Begin-->
-    <div class="instagram-photo">
-        <div class="insta-item set-bg" data-setbg="front/img/insta-1.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">Stranger</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="front/img/insta-2.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">Stranger</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="front/img/insta-3.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">Stranger</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="front/img/insta-4.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">Stranger</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="front/img/insta-5.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">Stranger</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="front/img/insta-6.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">Stranger</a></h5>
-            </div>
-        </div>
-    </div>
-    <!--Instagram Section End-->
 @endsection
