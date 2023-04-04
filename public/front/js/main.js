@@ -287,11 +287,11 @@ function numberWithCommas(x) {
     return x.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function addCart(productId) {
+function addCart(productId, qty) {
     $.ajax({
         type: "GET",
         url: "cart/add",
-        data: { productId: productId },
+        data: { productId: productId, qty: qty },
         success: function(response) {
             $('.cart-count').text(response['count']);
             $('.cart-price').text(response['total'] + 'đ');

@@ -2326,9 +2326,10 @@ ol {
     float: left;
 }
 
-.product-details .quantity .primary-btn.pd-cart {
-    padding: 14px 70px 10px;
-}
+
+/* .product-details .quantity .primary-btn.pd-cart {
+    padding: 14px 100px 10px;
+} */
 
 .product-details .pd-tags {
     margin-bottom: 27px;
@@ -2662,7 +2663,19 @@ ol {
 .cart-table table {
     width: 100%;
     min-width: 480px;
-    border: 1px solid #ebebeb;
+}
+
+.cart-table table thead tr:first-of-type {
+    border-top: 1px solid black;
+}
+
+.cart-table table tbody tr:last-of-type {
+    border-bottom: 1px solid black;
+}
+
+.cart-table table tr {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .cart-table table tr th {
@@ -2672,6 +2685,9 @@ ol {
     border-bottom: 1px solid #ebebeb;
     text-transform: uppercase;
     text-align: center;
+    background-color: #e7ab3c;
+    color: black;
+    padding: 1rem 0 1rem 0;
 }
 
 .cart-table table tr th.p-name {
@@ -2681,6 +2697,15 @@ ol {
 .cart-table table tr td {
     text-align: center;
     padding-bottom: 34px;
+    background-color: #fff;
+    position: relative;
+}
+
+.cart-table table tr td img {
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 100%;
 }
 
 .cart-table table tr td.first-row {
@@ -2945,17 +2970,19 @@ ol {
     color: #252525;
 }
 
-.checkout-form .create-item label input {
+
+/* .checkout-form .create-item label input {
     position: absolute;
     visibility: hidden;
-}
+} */
 
 .checkout-form .create-item label input:checked~span {
     background: #e7ab3c;
     border-color: #e7ab3c;
 }
 
-.checkout-form .create-item label .checkmark {
+
+/* .checkout-form .create-item label .checkmark {
     position: absolute;
     left: 0;
     top: 3px;
@@ -2963,9 +2990,10 @@ ol {
     width: 13px;
     border: 2px solid #B2B2B2;
     border-radius: 50%;
-}
+} */
 
-.checkout-form .create-item label .checkmark:after {
+
+/* .checkout-form .create-item label .checkmark:after {
     left: 0;
     top: 0;
     width: 9px;
@@ -2975,7 +3003,7 @@ ol {
     -webkit-transform: rotate(127deg);
     -ms-transform: rotate(127deg);
     transform: rotate(127deg);
-}
+} */
 
 .checkout-form .place-order .order-total {
     border: 2px solid #ebebeb;

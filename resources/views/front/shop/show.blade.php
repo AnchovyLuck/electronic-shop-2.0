@@ -81,8 +81,8 @@
                                 <div class="pd-size-choose">
                                     @foreach (array_unique(array_column($product->productDetails->toArray(), 'RAM')) as $productRAM)
                                         <div class="sc-item">
-                                            <input type="radio" id="sm-{{$productRAM}}">
-                                            <label for="sm-{{$productRAM}}">{{$productRAM}}</label>
+                                            {{-- <input type="radio" id="sm-{{$productRAM}}"> --}}
+                                            <label for="sm-{{$productRAM}}">{{$productRAM}} GB</label>
                                         </div>
                                     @endforeach
                                 </div>
@@ -91,12 +91,12 @@
                                         <div class="pro-qty">
                                             <input type="text" value="1">
                                         </div>
-                                        <a href="#" class="primary-btn pd-cart">Add to cart</a>
+                                        <a href="javascript:addCart({{$product->id}})" class="primary-btn pd-cart">Thêm vào giỏ hàng</a>
                                     </div>
                                 </div>
                                 <ul class="pd-tags">
-                                    <li><span>CATEGORIES</span>: {{$product->productCategory->name}}</li>
-                                    <li><span>TAGS</span>: {{$product->tag}}</li>
+                                    <li><span>Loại sản phẩm</span>: {{$product->productCategory->name}}</li>
+                                    <li><span>Tags</span>: {{$product->tag}}</li>
                                 </ul>
                                 <div class="pd-share">
                                     <div class="p-code">Sku: {{$product->sku}}</div>
@@ -112,9 +112,9 @@
                     <div class="product-tab">
                         <div class="tab-item">
                             <ul class="nav" role="tablist">
-                                <li><a class="active" href="#tab-1" data-toggle="tab" role="tab">DESCRIPTION</a></li>
-                                <li><a href="#tab-2" data-toggle="tab" role="tab">SPECIFICATION</a></li>
-                                <li><a href="#tab-3" data-toggle="tab" role="tab">Customer Reviews ({{count($product->productComments)}})</a></li>
+                                <li><a class="active" href="#tab-1" data-toggle="tab" role="tab">MÔ TẢ</a></li>
+                                <li><a href="#tab-2" data-toggle="tab" role="tab">CÁC CHI TIẾT KHÁC</a></li>
+                                <li><a href="#tab-3" data-toggle="tab" role="tab">Bình luận ({{count($product->productComments)}})</a></li>
                             </ul>
                         </div>
                         <div class="tab-item-content">
@@ -128,7 +128,7 @@
                                     <div class="specification-table">
                                         <table>
                                             <tr>
-                                                <td class="p-catagory">Customer Rating</td>
+                                                <td class="p-catagory">Xếp hạng</td>
                                                 <td>
                                                     <div class="pd-rating">
                                                         @for ($i = 1; $i <= 5; $i++)
@@ -143,25 +143,19 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Price</td>
+                                                <td class="p-catagory">Giá</td>
                                                 <td>
-                                                    <div class="p-price">{{$product->discount}} đ</div>
+                                                    <div class="p-price">{{$product->discount ?? $product->price}} đ</div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Add to cart</td>
+                                                <td class="p-catagory">Số lượng</td>
                                                 <td>
-                                                    <div class="cart-add">+ add to cart</div>
+                                                    <div class="p-stock">Hiện còn {{$product->qty}} sản phẩm trong cửa hàng.</div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Availability</td>
-                                                <td>
-                                                    <div class="p-stock">{{$product->qty}} in stock</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="p-catagory">Weight</td>
+                                                <td class="p-catagory">Khối lượng</td>
                                                 <td>
                                                     <div class="p-weight">{{$product->weight}} kg</div>
                                                 </td>
@@ -177,7 +171,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Color</td>
+                                                <td class="p-catagory">Màu sắc</td>
                                                 <td>
                                                         @foreach (array_unique(array_column($product->productDetails->toArray(), 'color')) as $productColor)
                                                             <div class="cs-item" >
@@ -273,7 +267,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Related Products</h2>
+                        <h2>Sản phẩm liên quan</h2>
                     </div>
                 </div>
             </div>

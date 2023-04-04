@@ -29,7 +29,7 @@
                                 <thead>
                                     <tr>
                                         <th>Ảnh</th>
-                                        <th class="p-name">Sản phẩm</th>
+                                        <th>Sản phẩm</th>
                                         <th>Giá</th>
                                         <th>Số lượng</th>
                                         <th>Tổng cộng</th>
@@ -48,7 +48,7 @@
                                             <td class="qua-col first-row">
                                                 <div class="quantity">
                                                     <div class="pro-qty">
-                                                        <input type="text" value="{{$cart->qty}}" data-rowId="{{$cart->rowId}}">
+                                                        <input type="text" value="{{$cart->qty}}">
                                                     </div>
                                                 </div>
                                             </td>

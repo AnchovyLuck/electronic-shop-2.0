@@ -7,6 +7,7 @@ use App\Services\Product\ProductServiceInterface;
 use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use App\Services\ProductComment\ProductCommentServiceInterface;
 use App\Services\Brand\BrandServiceInterface;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 
